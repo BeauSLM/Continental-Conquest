@@ -118,10 +118,12 @@ CREATE TABLE CHARACTERS (
 );
 
 CREATE TABLE PARTY (
-	Party_id INTEGER NOT NULL,
+		Party_id INTEGER NOT NULL,
+		Acct_ID INTEGER NOT NULL,
     Ch_name VARCHAR(20) NOT NULL,
-    PRIMARY KEY (Party_id, Ch_name),
-    FOREIGN KEY (Ch_name) REFERENCES CHARACTERS (Name)
+    PRIMARY KEY (Party_id, Acct_ID, Ch_name),
+    FOREIGN KEY (Acct_ID) REFERENCES PLAYERS (Player_ID),
+		FOREIGN KEY (Ch_name) REFERENCES CHARACTERS (Name)
 );
 
 ALTER TABLE CHARACTERS 
@@ -183,6 +185,7 @@ CREATE TABLE ITEM_STATS (
     PRIMARY KEY (Item_ID),
     FOREIGN KEY (Item_ID) REFERENCES ITEM (Item_ID)
 );
+
 CREATE TABLE CHAR_SLOTS (
 	Acc_ID INTEGER NOT NULL,
     Char_Name VARCHAR(30),
@@ -215,6 +218,7 @@ CREATE TABLE CHAR_STATS (
     FOREIGN KEY (Acc_ID) REFERENCES CHARACTERS (Acct_ID),
     FOREIGN KEY (Char_Name) REFERENCES CHARACTERS (Name)
 );
+
 INSERT INTO USERS (Fname, Lname, Username, Password, Birthday, Email) 
 VALUES 
 ('John', 'Smith', 'jsmith', 'jsmith1993', '1996-06-06', 'john.smith@gmail.com'),
@@ -314,6 +318,18 @@ VALUES
 (7, 'BabyCarrot', 55, 1100001, 125000, 'City Townhall', 'Dwarf', 'Warrior', NULL),
 (8, 'TenderLove', 35, 700001, 15000, 'AmityVille', 'Elf', 'Hierophant', NULL);
 
+INSERT INTO CHAR_STATS (Acc_ID, Char_Name, Atk, Def, HP, MP, Spd)
+VALUES
+(1, 'AlexanderTheGreat', 200, 300, 1000, 150, 100),
+(1, 'SirJohnKnight', 600, 50, 250, 300, 500),
+(1, 'AttilaTheHun', 100, 80, 160, 120, 310),
+(2, 'JasonMamoa', 400, 400, 400, 400, 400),
+(2, 'NotYourEveryDayHero', 400, 200, 500, 480, 300),
+(2, 'TheTerminator', 1000, 1800, 3200, 2800, 5000),
+(7, 'BabyCarrot', 300, 200, 350, 800, 180),
+(8, 'TenderLove', 80, 90, 200, 1800, 200);
+
+
 INSERT INTO ABILITY (Name, Mana_Cost, Description, Damage, Lv_Req, Cooldown)
 VALUES 
 ('Valor', 50, 'Decreases defense by 50 but increases Attack by 100, Speed by 100 for 10 seconds.', 0, 15, 500),
@@ -368,46 +384,104 @@ VALUES
 
 INSERT INTO ITEM (Name, Type, Sell_price, Rarity, Item_Category, Base_Dmg, Base_Def)
 VALUES
+--1-5
 ('Sword of Might', 'Sword', 1500, 'Normal', 'Weapon', 200, 0),
 ('Headgear of Bravery', 'Helmet', 600, 'Normal', 'Armor', 0, 50),
 ('Chestplate of Bravery', 'Chest', 2000, 'Normal', 'Armor', 0, 100),
 ('Gaiters of Bravery', 'Legs', 1500, 'Normal', 'Armor', 0, 80),
 ('Boots of Bravery', 'Boots', 750, 'Normal', 'Armor', 0, 60),
+--6-10
 ('Necklace of Valor', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Valor', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Ring of Valor', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
 ('Staff of Wisdom', 'Staff', 2500, 'Normal', 'Weapon', 100, 0),
 ('Helmet of Wisdom', 'Helmet', 2500, 'Normal', 'Armor', 0, 80),
+--11-15
 ('Armour of Wisdom', 'Chest', 1000, 'Normal', 'Armor', 0, 85),
 ('Leggings of Wisdom', 'Legs', 800, 'Normal', 'Armor', 0, 65),
 ('Boots of Wisdom', 'Boots', 1200, 'Normal', 'Armor', 0, 55),
 ('Necklace of Nature', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Nature', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
+--16-20
 ('Ring of Nature', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
 ('Hunting Dagger', 'Dagger', 1500, 'Normal', 'Weapon', 300, 0),
 ('Assassin\'s Helmet', 'Helmet', 1500, 'Normal', 'Armor', 0, 40),
 ('Assassin\'s Shirt', 'Chest', 1500, 'Normal', 'Armor', 0, 65),
 ('Assassin\'s Shorts', 'Legs', 1200, 'Normal', 'Armor', 0, 65),
+--21-25
 ('Assassin\'s Boots', 'Boots', 1200, 'Normal', 'Armor', 0, 45),
 ('Necklace of Sixth Sense', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Sixth Sense', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Ring of Sixth Sense', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
 ('Dragon Slayer', 'Bow', 2300, 'Normal', 'Weapon', 500, 0),
+--26-30
 ('Mountain Soul Leather Headgear', 'Helmet', 1500, 'Normal', 'Armor', 0, 50),
 ('Mountain Soul Leather Vest', 'Chest', 1500, 'Normal', 'Armor', 0, 65),
 ('Mountain Soul Leather Pants', 'Legs', 1200, 'Normal', 'Armor', 0, 65),
 ('Mountain Soul Leather Boots', 'Boots', 800, 'Normal', 'Armor', 0, 65),
 ('Sniper\'s Necklace', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
+--31-35
 ('Sniper\'s Earring', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Sniper\'s Ring', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
 ('Staff of Sorcery', 'Staff', 2300, 'Normal', 'Weapon', 400, 0),
 ('Helmet of Mysticism', 'Helmet', 800, 'Normal', 'Armor', 0, 60),
 ('Tunic of Mysticism', 'Chest', 800, 'Normal', 'Armor', 0, 60),
+--36-40
 ('Gaiters of Mysticism', 'Legs', 800, 'Normal', 'Armor', 0, 40),
 ('Boots of Mysticism', 'Boots', 600, 'Normal', 'Armor', 0, 35),
 ('Necklace of Darkness', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Darkness', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Ring of Darkness', 'Ring', 300, 'Normal', 'Accessory', 0, 0);
+
+INSERT INTO ITEM_STATS (Item_ID, Atk, Def, HP, MP, Spd)
+VALUES
+(1, 100, NULL, NULL, NULL, NULL),
+(2, 50, 50, NULL, NULL, NULL),
+(3, 50, 50, NULL, NULL, NULL),
+(4, 50, 50, NULL, NULL, NULL),
+(5, 50, 50, NULL, NULL, NULL),
+
+(6, NULL, NULL, 25, NULL, NULL),
+(7, NULL, NULL, 25, NULL, NULL),
+(8, NULL, NULL, 20, NULL, NULL),
+(9, 50, NULL, NULL, 100, NULL),
+(10, NULL, NULL, NULL, 50, NULL),
+
+(11, NULL, NULL, NULL, 50, NULL),
+(12, NULL, NULL, NULL, 50, NULL),
+(13, NULL, NULL, NULL, 50, NULL),
+(14, NULL, NULL, NULL, NULL, 45),
+(15, NULL, NULL, NULL, NULL, 45),
+
+(16, NULL, NULL, NULL, NULL, 45),
+(17, 20, -5, NULL, -5, 20),
+(18, 80, -40, NULL, NULL, NULL),
+(19, 80, -40, NULL, NULL, NULL),
+(20, 80, -40, NULL, NULL, NULL),
+
+(21, 80, -40, NULL, NULL, NULL),
+(22, NULL, NULL, 20, 20, NULL),
+(23, NULL, NULL, 20, 20, NULL),
+(24, NULL, NULL, 20, 20, NULL),
+(25, 250, 40, 150, NULL, -60),
+
+(26, NULL, 60, 60, NULL, NULL),
+(27, NULL, 60, 60, NULL, NULL),
+(28, NULL, 60, 60, NULL, NULL),
+(29, NULL, 60, 60, NULL, NULL),
+(30, 80, NULL, NULL, -10, -50),
+
+(31, 80, NULL, NULL, -10, -50),
+(32, 80, NULL, NULL, -10, -50),
+(33, 50, 50, 50, 100, 50),
+(34, -20, 50, NULL, 50, NULL),
+(35, -20, 50, NULL, 50, NULL),
+
+(36, -20, 50, NULL, 50, NULL),
+(37, -20, 50, NULL, 50, NULL),
+(38, 100, -50, -300, NULL, 100),
+(39, 100, -50, -300, NULL, 100),
+(40, 100, -50, -300, NULL, 100);
 
 INSERT INTO ITEM_CLASS_REQ (Item_ID, Class)
 VALUES
@@ -418,5 +492,21 @@ VALUES
 (33, 'Sorcerer'), (34, 'Sorcerer'), (35, 'Sorcerer'), (36, 'Sorcerer'), (37, 'Sorcerer'), (38, 'Sorcerer'), (39, 'Sorcerer'), (40, 'Sorcerer'),
 (33, 'Necromancer'), (34, 'Necromancer'), (35, 'Necromancer'), (36, 'Necromancer'), (37, 'Necromancer'), (38, 'Necromancer'), (39, 'Necromancer'), (40, 'Necromancer'),
 (33, 'Hierophant'), (34, 'Hierophant'), (35, 'Hierophant'), (36, 'Hierophant'), (37, 'Hierophant'), (38, 'Hierophant'), (39, 'Hierophant'), (40, 'Hierophant');
+
+INSERT INTO CHAR_BAG (Acc_ID, Char_Name, Item_ID)
+VALUES
+(1, 'AlexanderTheGreat', 3), (1, 'AlexanderTheGreat', 16), (1, 'AlexanderTheGreat', 39),
+(1, 'AttilaTheHun', 25), (1, 'AttilaTheHun', 31);
+
+INSERT INTO CHAR_SLOTS (Acc_ID, Char_Name, Item_ID, Slot_Type)
+VALUES
+(1, 'AlexanderTheGreat', 1, 'Weapon'), (1, 'AlexanderTheGreat', 2, 'Helmet'),
+(1, 'AttilaTheHun', 25, 'Weapon'), (1, 'AttilaTheHun', 31, 'Earring'),
+(2, 'JasonMamoa', 1, 'Weapon'), (2, 'JasonMamoa', 4, 'Legs'),
+(2, 'NotYourEveryDayHero', 33, 'Weapon');
+
+INSERT INTO PARTY (Party_id, Acct_ID, Ch_name)
+VALUES
+(1, 1, 'AlexanderThegreat'), (1, 2, 'JasonMamoa');
 
 SELECT * FROM ITEM, ITEM_CLASS_REQ WHERE ITEM.Item_ID=ITEM_CLASS_REQ.Item_ID;
