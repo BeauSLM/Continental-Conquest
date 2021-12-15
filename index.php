@@ -1,4 +1,5 @@
 <?php
+    include 'include/connectDB.php';
     include 'include/header.php';
     include 'include/left-menu.php';
 ?>

@@ -1,4 +1,5 @@
 <?php
+    include 'include/connectDB.php';
     include 'include/header.php';
     include 'include/left-menu.php';
     //viewcharacter.php?char_name=AlexanderTheGreat&acct_id
@@ -34,28 +35,28 @@
                             </tr>
                             <tr class="table_players_row">
                                 <td class="table_players_header_data">
-                                    Name
-                                </td>
-                                <td class="table_players_header_data">
-                                    Lvl
-                                </td>
-                                <td class="table_players_header_data">
-                                    XP
-                                </td>
-                                <td class="table_players_header_data">
-                                    Gold
-                                </td>
-                                <td class="table_players_header_data">
-                                    Location
+                                    Character Name
                                 </td>
                                 <td class="table_players_header_data">
                                     Race
                                 </td>
                                 <td class="table_players_header_data">
                                     Class
-                                </td>     
+                                </td>  
                                 <td class="table_players_header_data">
-                                    Current Party
+                                    Owned by
+                                </td>
+                                <td class="table_players_header_data">
+                                    Experience
+                                </td>
+                                <td class="table_players_header_data">
+                                    Level
+                                </td>
+                                <td class="table_players_header_data">
+                                    Gold
+                                </td>
+                                <td class="table_players_header_data">
+                                    View Character
                                 </td>                  
                             </tr>
                             <?php

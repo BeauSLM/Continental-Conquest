@@ -1,4 +1,5 @@
 <?php
+    include 'include/connectDB.php';
     include 'include/header.php';
     include 'include/left-menu.php';
 ?>
@@ -16,7 +17,7 @@
                                         Guild Name :
                                     </td>
                                     <td class="table_players_data">
-                                        <input class="input-fields" type="text" name="guild" value="Type Name to Search" />
+                                        <input class="input-fields" onfocus="this.value=''" type="text" name="guild" value="Type Name to Search" />
                                     </td>
                                 </tr>
 

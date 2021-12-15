@@ -1,105 +1,77 @@
 <?php
+    include 'include/connectDB.php';
     include 'include/header.php';
     include 'include/left-menu.php';
+
+    //finds the characters
+    $query = 'SELECT DISTINCT Player_ID, Username, Guild, Playtime, SUM(XP), SUM(GOLD) FROM PLAYERS, USERS, CHARACTERS WHERE PLAYERS.Player_ID=USERS.Acct_ID AND CHARACTERS.Acct_ID = PLAYERS.Player_ID GROUP BY Player_ID ORDER BY SUM(XP) DESC';
+    $result = $db->connection->query($query);
 ?>
                 <div class="center">
                     <div id="center-content">
                         <table id="table_players">
                             <tr class="table_players_row">
-                                <td class="table_players_data" id="table_players_title" colspan="4" >
-                                    Top Players
+                                <td class="table_players_data" id="table_players_title" colspan="6">
+                                    Top Players (by Total XP)
                                 </td>
                             </tr>
+
                             <tr class="table_players_row">
+                                <td class="table_players_header_data">
+                                    Ranking
+                                </td>
                                 <td class="table_players_header_data">
                                     Username
                                 </td>
                                 <td class="table_players_header_data">
-                                    Total XP
+                                    Total Character XP
+                                </td>
+                                <td class="table_players_header_data">
+                                    Total Character Gold
+                                </td>
+                                <td class="table_players_header_data">
+                                    Playtime
                                 </td>
                                 <td class="table_players_header_data">
                                     Guild
-                                </td>
-                                <td class="table_players_header_data">
-                                    Characters
+                                </td>  
+                            </tr>
+
+                            <?php
+                                $i = 1;
+                                foreach($result as $player) {
+                                    //finds the total XP
+                                    echo "
+                                    <tr class='table_players_row' colspan='6'>
+                                        <td class='table_players_data'>
+                                            ".$i."
+                                        </td>
+                                        <td class='table_players_data'>
+                                            <a href='viewplayer.php?acct_id=".$player['Player_ID']."'>".$player['Username']."</a>
+                                        </td>
+                                        <td class='table_players_data'>
+                                            ".$player["SUM(XP)"]."
+                                        </td>
+                                        <td class='table_players_data'>
+                                            ".$player['SUM(GOLD)']."
+                                        </td>
+                                        <td class='table_players_data'>
+                                            ".$player['Playtime']."
+                                        </td>
+                                        <td class='table_players_data'>
+                                            <a href='viewguild.php?guild=".$player['Guild']."'>".$player['Guild']."</a>
+                                        </td>
+                                    </tr>
+                                    ";
+                                    $i++;
+                                }
+                            ?>
+                            <tr>
+                                <td class='table_players_data' colspan='6'>
+                                    Note : Players without characters will not appear in this list.
                                 </td>
                             </tr>
-                            <tr class="table_players_row">
-                                <td class="table_players_data">
-                                    JohnDoer
-                                </td>
-                                <td class="table_players_data">
-                                    5,000,000
-                                </td>
-                                <td class="table_players_data">
-                                    PunnyDuck
-                                </td>
-                                <td class="table_players_data">
-                                    <a href="">View Characters</a>
-                                </td>
-                            </tr>
-                            <tr class="table_players_row">
-                                <td class="table_players_data">
-                                    JohnDoer2
-                                </td>
-                                <td class="table_players_data">
-                                    4,000,000
-                                </td>
-                                <td class="table_players_data">
-                                    PunnyDuck
-                                </td>
-                                <td class="table_players_data">
-                                    <a href="">View Characters</a>
-                                </td>
-                            </tr>
-                            <tr class="table_players_row">
-                                <td class="table_players_data">
-                                    JohnDoer3
-                                </td>
-                                <td class="table_players_data">
-                                    3,000,000
-                                </td>
-                                <td class="table_players_data">
-                                    PunnyDuck
-                                </td>
-                                <td class="table_players_data">
-                                    <a href="">View Characters</a>
-                                </td>
-                            </tr>
-                            <tr class="table_players_row">
-                                <td class="table_players_data">
-                                    JohnDoer4
-                                </td>
-                                <td class="table_players_data">
-                                    2,000,000
-                                </td>
-                                <td class="table_players_data">
-                                    PunnyDuck
-                                </td>
-                                <td class="table_players_data">
-                                    <a href="">View Characters</a>
-                                </td>
-                            </tr>
-                            <tr class="table_players_row">
-                                <td class="table_players_data">
-                                    JohnDoer
-                                </td>
-                                <td class="table_players_data">
-                                    1,000,000
-                                </td>
-                                <td class="table_players_data">
-                                    PunnyDuck
-                                </td>
-                                <td class="table_players_data">
-                                    <a href="">View Characters</a>
-                                </td>
-                            </tr>
-                            <tr class="table_players_row">
-                                <td class="table_players_data" colspan="4">
-                                    1 <a href="#">2</a> <a href="#">2</a> <a href="#">3</a>
-                                </td>
-                            </tr>
-                        </table>
+                            </table>
                     </div>
                 </div>
 <?php

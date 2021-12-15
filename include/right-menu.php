@@ -1,13 +1,33 @@
-<?php
-?>
                 <div class="right">
                     <div class="menu-header">
-                        Admin Panel
+                        User Info
                     </div>
                     <div class="menu-content">
-                        <a href="editplayer.php">Edit Player</a><br>
-                        <a href="editcharacter.php">Edit Character</a><br>
-                        <a href="editguild.php">Edit Guild</a><br>
-                        <a href="viewtickets.php">View Tickets</a><br>
+                    <?php
+                        if(isset($_COOKIE["admin"]) && isset($_COOKIE['password'])) {
+                                echo "Welcome ".$_COOKIE["admin"]."!<br/>";
+                                echo "<a href='logout.php'>Logout</a>";
+                                echo "
+                                    <div class='menu-header'>
+                                        Admin Panel
+                                    </div>                    
+                                    <div class='menu-content'>
+                                        <a href='editplayer.php'>Edit Player</a><br>
+                                        <a href='editcharacter.php'>Edit Character</a><br>
+                                        <a href='editguild.php'>Edit Guild</a><br>
+                                        <a href='viewtickets.php'>View Tickets</a><br>
+                                    </div>
+                                    ";
+                        } else {
+                            echo "Welcome, guest.<br>
+                            <a href='login.php'>Admin Login</a><br>
+                            ";
+                            
+                        }
+                    ?>
                     </div>
+                    <div>
+
+                    </div>
+
                 </div>

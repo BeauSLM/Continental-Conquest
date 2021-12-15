@@ -1,4 +1,5 @@
 <?php
+    include 'include/connectDB.php';
     include 'include/header.php';
     include 'include/left-menu.php';
 ?>
@@ -17,7 +18,7 @@
                                     Account ID :
                                 </td>
                                 <td class="table_players_data">
-                                    <input class="input-fields" name="acct_id" type="text" value="Type id to search" />
+                                    <input class="input-fields" onfocus="this.value=''" name="acct_id" type="text" value="Type id to search" />
                                 </td>
                             </tr>
                             <tr class="table_players_row">
@@ -25,7 +26,7 @@
                                     Character Name :
                                 </td>
                                 <td class="table_players_data">
-                                    <input class="input-fields" name="char_name" type="text" value="Type Name to Search" />
+                                    <input class="input-fields" onfocus="this.value=''" name="char_name" type="text" value="Type Name to Search" />
                                 </td>
                             </tr>
 

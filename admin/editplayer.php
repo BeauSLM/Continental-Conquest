@@ -1,4 +1,5 @@
 <?php
+    include 'include/connectDB.php';
     include 'include/header.php';
     include 'include/left-menu.php';
 ?>
@@ -7,39 +8,31 @@
                         <table id="table_players">
                             <tr class="table_players_row">
                                 <td class="table_players_data" id="table_players_title" colspan="2" >
-                                    Edit Character
+                                    Edit Player
                                 </td>
                             </tr>
                             <tr class="table_players_row">
                                 <td class="table_players_data">
-                                    Account ID:
+                                    Username :
                                 </td>
                                 <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Enter Account ID" />
-                                </td>
-                            </tr>
-                            <tr class="table_players_row">
-                                <td class="table_players_data">
-                                    Character Name :
-                                </td>
-                                <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Enter Character Name" />
+                                    <input class="input-fields" type="text" value="Enter Username" />
                                 </td>
                             </tr>
                             <tr class="table_players_row">
                                 <td class="table_players_data">
-                                    XP :
+                                    First Name :
                                 </td>
                                 <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Enter Experience" />
+                                    <input class="input-fields" type="text" value="Enter First Name" />
                                 </td>
                             </tr>
                             <tr class="table_players_row">
                                 <td class="table_players_data">
-                                    Location :
+                                    Last Name :
                                 </td>
                                 <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Enter Location" />
+                                    <input class="input-fields" type="text" value="Enter Last Name" />
                                 </td>
                             </tr>
                             <tr class="table_players_row">
@@ -52,31 +45,27 @@
                             </tr>
                             <tr class="table_players_row">
                                 <td class="table_players_data">
-                                    Race
+                                    Email :
                                 </td>
                                 <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Enter Race" />
-                                </td>
-                            </tr>
-                            <tr class="table_players_row">
-                                <td class="table_players_data">
-                                    Class
-                                </td>
-                                <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Enter Class" />
+                                    <input class="input-fields" type="text" value="Enter Email" />
                                 </td>
                             </tr>
                             <tr class="table_players_row">
                                 <td class="table_players_data">
-                                    Gold
+                                    Subcription Status:
                                 </td>
                                 <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Enter Gold" />
+                                    <select class="input-fields"id="subscription-selector">
+                                        <option value="Subscribed">Subscribed</option>
+                                        <option value="Unsubscribed">Unsubscribed</option>
+                                        <option value="Trial">Trial</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr class="table_players_row">
                                 <td class="table_players_data" colspan="2">
-                                    Note: Alteration of Race and Class may corrupt character.
+                                    Note: Alteration of Username may corrupt account.
                                 </td>
                             </tr>
                             <tr class="table_players_row">
