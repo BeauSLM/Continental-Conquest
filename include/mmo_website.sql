@@ -44,7 +44,7 @@ CREATE TABLE PLAYERS (
     Sub_status TINYINT(1) NOT NULL,
 	Guild VARCHAR(30) DEFAULT NULL,
     PRIMARY KEY (Player_ID),
-    FOREIGN KEY (Player_ID) REFERENCES USERS (Acct_ID),
+    FOREIGN KEY (Player_ID) REFERENCES USERS (Acct_ID)
 );
 
 CREATE TABLE ADMINS (
@@ -114,7 +114,7 @@ CREATE TABLE CHARACTERS (
     PRIMARY KEY(Acct_ID, Name),
     FOREIGN KEY (Acct_ID) REFERENCES PLAYERS (Player_ID),
     FOREIGN KEY (Race) REFERENCES RACE (Name),
-    FOREIGN KEY (Class) REFERENCES CLASS (Name),
+    FOREIGN KEY (Class) REFERENCES CLASS (Name)
 );
 
 CREATE TABLE PARTY (
@@ -232,7 +232,7 @@ VALUES
 ('Apostolos', 'Blizzscon', 'bscon', 'test2021', '1991-06-01', 'a.scon@hotmail.com'),
 ('Quentin', 'Jenfingers', 'jquen', 'test2020','1992-05-01', 'a.jen@gmail.com'),
 ('Beau', 'McCranberry', 'bmcran', 'test2019', '1902-02-02', 'b.mccran@gmail.com'),
-('Sam', 'Cast', 'castS', 'cast1975-21a', '1965-02-05', 's.cast@hotmail.com');
+('Sam', 'Cast', 'castS', 'cast1975-21a', '1965-02-05', 's.cast@hotmail.com'),
 ('Mike', 'Hawk', 'hawkseyjr', 'password', '2014-09-08', 'mikehawk@email.au');
 SELECT * FROM USERS;
 
@@ -384,49 +384,49 @@ VALUES
 
 INSERT INTO ITEM (Name, Type, Sell_price, Rarity, Item_Category, Base_Dmg, Base_Def)
 VALUES
---1-5
+-- 1-5
 ('Sword of Might', 'Sword', 1500, 'Normal', 'Weapon', 200, 0),
 ('Headgear of Bravery', 'Helmet', 600, 'Normal', 'Armor', 0, 50),
 ('Chestplate of Bravery', 'Chest', 2000, 'Normal', 'Armor', 0, 100),
 ('Gaiters of Bravery', 'Legs', 1500, 'Normal', 'Armor', 0, 80),
 ('Boots of Bravery', 'Boots', 750, 'Normal', 'Armor', 0, 60),
---6-10
+-- 6-0
 ('Necklace of Valor', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Valor', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Ring of Valor', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
 ('Staff of Wisdom', 'Staff', 2500, 'Normal', 'Weapon', 100, 0),
 ('Helmet of Wisdom', 'Helmet', 2500, 'Normal', 'Armor', 0, 80),
---11-15
+-- 11-15
 ('Armour of Wisdom', 'Chest', 1000, 'Normal', 'Armor', 0, 85),
 ('Leggings of Wisdom', 'Legs', 800, 'Normal', 'Armor', 0, 65),
 ('Boots of Wisdom', 'Boots', 1200, 'Normal', 'Armor', 0, 55),
 ('Necklace of Nature', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Nature', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
---16-20
+-- 16-20
 ('Ring of Nature', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
 ('Hunting Dagger', 'Dagger', 1500, 'Normal', 'Weapon', 300, 0),
 ('Assassin\'s Helmet', 'Helmet', 1500, 'Normal', 'Armor', 0, 40),
 ('Assassin\'s Shirt', 'Chest', 1500, 'Normal', 'Armor', 0, 65),
 ('Assassin\'s Shorts', 'Legs', 1200, 'Normal', 'Armor', 0, 65),
---21-25
+-- 21-25
 ('Assassin\'s Boots', 'Boots', 1200, 'Normal', 'Armor', 0, 45),
 ('Necklace of Sixth Sense', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Sixth Sense', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Ring of Sixth Sense', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
 ('Dragon Slayer', 'Bow', 2300, 'Normal', 'Weapon', 500, 0),
---26-30
+-- 26-30
 ('Mountain Soul Leather Headgear', 'Helmet', 1500, 'Normal', 'Armor', 0, 50),
 ('Mountain Soul Leather Vest', 'Chest', 1500, 'Normal', 'Armor', 0, 65),
 ('Mountain Soul Leather Pants', 'Legs', 1200, 'Normal', 'Armor', 0, 65),
 ('Mountain Soul Leather Boots', 'Boots', 800, 'Normal', 'Armor', 0, 65),
 ('Sniper\'s Necklace', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
---31-35
+-- 31-35
 ('Sniper\'s Earring', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Sniper\'s Ring', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
 ('Staff of Sorcery', 'Staff', 2300, 'Normal', 'Weapon', 400, 0),
 ('Helmet of Mysticism', 'Helmet', 800, 'Normal', 'Armor', 0, 60),
 ('Tunic of Mysticism', 'Chest', 800, 'Normal', 'Armor', 0, 60),
---36-40
+-- 36-40
 ('Gaiters of Mysticism', 'Legs', 800, 'Normal', 'Armor', 0, 40),
 ('Boots of Mysticism', 'Boots', 600, 'Normal', 'Armor', 0, 35),
 ('Necklace of Darkness', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),

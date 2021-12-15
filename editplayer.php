@@ -55,7 +55,11 @@
                                     Subcription Status:
                                 </td>
                                 <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Enter Status" />
+                                    <select class="input-fields"id="subscription-selector">
+                                        <option value="Subscribed">Subscribed</option>
+                                        <option value="Unsubscribed">Unsubscribed</option>
+                                        <option value="Trial">Trial</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr class="table_players_row">
