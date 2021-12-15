@@ -28,7 +28,7 @@
                         <table id="table_players">
                             <tr class="table_players_row">
                                 <td class="table_players_data" id="table_players_title" colspan="6" >
-                                    Viewing Player Guild : 
+                                    Viewing Guild : 
                                     <?php 
                                         if ($result->num_rows == 0) { 
                                             echo "<br/>Guild not found.";

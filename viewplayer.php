@@ -92,7 +92,7 @@
                                     <td class='table_players_data'>
                                         <?php
                                         if($row[3] != "") {
-                                            echo "<a href='viewguild?ID=".$row[3]."'>".$row[3]."</a>";
+                                            echo "<a href='viewguild.php?guild=".$row[3]."'>".$row[3]."</a>";
                                         } else {
                                             echo "No Guild";
                                         }
