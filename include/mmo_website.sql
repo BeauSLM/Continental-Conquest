@@ -297,11 +297,11 @@ VALUES
 
 INSERT INTO RACE (Name, Description)
 VALUES
-('Human', 'An adaptive race with versatile and wide-spread stats but no starting ability.'),
-('Elf', 'Agile folk with inate elven magic that allows them to cast simple spells.'),
+('Human', 'An adaptive race with versatile stats and abilities to make use of them.'),
+('Elf', 'Agile folk attuned with nature that get stronger with daylight.'),
 ('Orc', 'Bloodthirsty brutes with excellent might and the ability to call upon the powers of their ancestors.'),
-('Dark Elf', 'Strong Atk, HP weaker Defense, and average speed, stronger in the night.'),
-('Dwarf', 'Impressive artisans, great craftsmen, and very strong Defense and HP, average at the other departments');
+('Dark Elf', 'Stealthy and deadly in the night with powerful dark magic that strengthens with moonlight.'),
+('Dwarf', 'Impressive artisans, great craftsmen, and sturdy fighters with great utility.');
 
 INSERT INTO CHARACTERS (Acct_ID, Name, Lvl, XP, Gold, Location, Race, Class, Party_ID)
 VALUES 
@@ -335,7 +335,7 @@ VALUES
 ('Eagle Eye', 0, 'Increases your attacks by 50 when a bow is equipped', 50, 1, 0),
 ('Sharpshooter', 200, 'Increases your basic attack range by 500 for 30 seconds', 0, 55, 300),
 ('Fifth Eye', 300, 'Increases your speed and defense by 200 for 30 seconds', 0, 20, 180),
-('Forest Wisedom', 150, 'Increases your HP by 1000 for 5 minutes', 0, 15, 600),
+('Forest Wisdom', 150, 'Increases your HP by 1000 for 5 minutes', 0, 15, 600),
 ('Spirit Call', 200, 'Convert your MP to Attack for 30 seconds.', 0, 35, 200);
 
 INSERT INTO RACE_ABILITY (Abil_name, Race) 
@@ -347,7 +347,7 @@ VALUES
 ('Quick Step', 'Human'),
 ('Deadly Instict', 'Human'),
 ('Force of Nature', 'Orc'),
-('Forest Wisedom', 'Orc');
+('Forest Wisdom', 'Orc');
 
 INSERT INTO CLASS_ABILITY (Abil_name, Class) 
 VALUES
@@ -359,6 +359,7 @@ VALUES
 ('Tomb Raid','Necromancer'),
 ('Arrow Storm', 'Ranger'),
 ('Sharpshooter', 'Ranger'),
+('Forest Wisdom', 'Ranger'),
 ('Eagle Eye', 'Ranger'),
 ('Fifth Eye', 'Shaman'),
 ('Spirit Call', 'Shaman'),
@@ -375,19 +376,19 @@ VALUES
 ('Necklace of Valor', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Valor', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Ring of Valor', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
-('Staff of Wisedom', 'Staff', 2500, 'Normal', 'Weapon', 100, 0),
-('Helmet of Wisedom', 'Helmet', 2500, 'Normal', 'Armor', 0, 80),
-('Armour of Wisedom', 'Chest', 1000, 'Normal', 'Armor', 0, 85),
-('Leggings of Wisedom', 'Legs', 800, 'Normal', 'Armor', 0, 65),
-('Boots of Wisedom', 'Boots', 1200, 'Normal', 'Armor', 0, 55),
+('Staff of Wisdom', 'Staff', 2500, 'Normal', 'Weapon', 100, 0),
+('Helmet of Wisdom', 'Helmet', 2500, 'Normal', 'Armor', 0, 80),
+('Armour of Wisdom', 'Chest', 1000, 'Normal', 'Armor', 0, 85),
+('Leggings of Wisdom', 'Legs', 800, 'Normal', 'Armor', 0, 65),
+('Boots of Wisdom', 'Boots', 1200, 'Normal', 'Armor', 0, 55),
 ('Necklace of Nature', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Nature', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Ring of Nature', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
 ('Hunting Dagger', 'Dagger', 1500, 'Normal', 'Weapon', 300, 0),
-('Assasin\'s Helmet', 'Helmet', 1500, 'Normal', 'Armor', 0, 40),
-('Assasin\'s Shirt', 'Chest', 1500, 'Normal', 'Armor', 0, 65),
-('Assasin\'s Shorts', 'Legs', 1200, 'Normal', 'Armor', 0, 65),
-('Assasin\'s Boots', 'Boots', 1200, 'Normal', 'Armor', 0, 45),
+('Assassin\'s Helmet', 'Helmet', 1500, 'Normal', 'Armor', 0, 40),
+('Assassin\'s Shirt', 'Chest', 1500, 'Normal', 'Armor', 0, 65),
+('Assassin\'s Shorts', 'Legs', 1200, 'Normal', 'Armor', 0, 65),
+('Assassin\'s Boots', 'Boots', 1200, 'Normal', 'Armor', 0, 45),
 ('Necklace of Sixth Sense', 'Necklace', 300, 'Normal', 'Accessory', 0, 0),
 ('Earring of Sixth Sense', 'Earring', 300, 'Normal', 'Accessory', 0, 0),
 ('Ring of Sixth Sense', 'Ring', 300, 'Normal', 'Accessory', 0, 0),
