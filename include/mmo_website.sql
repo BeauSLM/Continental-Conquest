@@ -42,9 +42,10 @@ CREATE TABLE PLAYERS (
 	Player_ID INTEGER NOT NULL,
     Playtime VARCHAR(30) NOT NULL,
     Sub_status TINYINT(1) NOT NULL,
-	Guild VARCHAR(30),
-    PRIMARY KEY(Player_ID),
-    FOREIGN KEY (Player_ID) REFERENCES USERS (Acct_ID)
+	Guild VARCHAR(30) DEFAULT NULL,
+    PRIMARY KEY (Player_ID),
+    FOREIGN KEY (Player_ID) REFERENCES USERS (Acct_ID),
+    FOREIGN KEY (GUILD) REFERENCES GUILD (Guild_name);
 );
 
 CREATE TABLE ADMINS (
@@ -53,6 +54,7 @@ CREATE TABLE ADMINS (
     PRIMARY KEY (Admin_ID),
     FOREIGN KEY (Admin_ID) REFERENCES USERS (Acct_ID) 
 );
+
 CREATE TABLE GUILD (
 	Guild_name VARCHAR(30) NOT NULL,
     Leader_ID INTEGER NOT NULL,
@@ -62,9 +64,6 @@ CREATE TABLE GUILD (
     PRIMARY KEY (Guild_name),
     FOREIGN KEY (Leader_ID) REFERENCES PLAYERS (Player_ID) 
 );
--- Potential ISSUE HERE
-ALTER TABLE PLAYERS 
-ADD FOREIGN KEY (GUILD) REFERENCES GUILD (Guild_name);
 
 CREATE TABLE FRIEND_LIST (
 	Acct_ID INTEGER NOT NULL,
@@ -81,12 +80,11 @@ CREATE TABLE TICKET (
     Date DATE NOT NULL,
     Player_ID INTEGER NOT NULL,
     Admin_ID INTEGER,
-    Status VARCHAR(15),
+    Status VARCHAR(15) NOT NULL,
 	PRIMARY KEY (Ticket_ID),
     FOREIGN KEY (Player_ID) REFERENCES PLAYERS (Player_ID),
-    FOREIGN KEY ( Admin_ID) REFERENCES ADMINS (Admin_ID)
+    FOREIGN KEY (Admin_ID) REFERENCES ADMINS (Admin_ID)
 );
-
 
 CREATE TABLE CLASS (
 	Name VARCHAR(30) NOT NULL,
@@ -113,17 +111,16 @@ CREATE TABLE CHARACTERS (
     PRIMARY KEY(Acct_ID, Name),
     FOREIGN KEY (Acct_ID) REFERENCES PLAYERS (Player_ID),
     FOREIGN KEY (Race) REFERENCES RACE (Name),
-    FOREIGN KEY (Class) REFERENCES CLASS (Name)
+    FOREIGN KEY (Class) REFERENCES CLASS (Name),
+    FOREIGN KEY (Party_ID) REFERENCES PARTY (Party_id)
 );
+
 CREATE TABLE PARTY (
 	Party_id INTEGER NOT NULL,
     Ch_name VARCHAR(20) NOT NULL,
-    PRIMARY KEY (Party_id),
+    PRIMARY KEY (Party_id, Ch_name),
     FOREIGN KEY (Ch_name) REFERENCES CHARACTERS (Name)
 );
--- Potential Issue here
-ALTER TABLE CHARACTERS 
-ADD FOREIGN KEY (Party_ID) REFERENCES PARTY (Party_id);
 
 CREATE TABLE ABILITY (
 	Name VARCHAR(30) NOT NULL,
@@ -153,14 +150,14 @@ CREATE TABLE CLASS_ABILITY (
 
 CREATE TABLE ITEM (
 	Item_ID INTEGER AUTO_INCREMENT,
-    Name VARCHAR(30) NOT NULL,
+    Name VARCHAR(50) NOT NULL,
     Type VARCHAR(30) NOT NULL,
     Sell_price INTEGER NOT NULL,
     Rarity VARCHAR(30) NOT NULL,
-    Description VARCHAR(30) DEFAULT NULL,
+    Description VARCHAR(100) DEFAULT NULL,
     Item_Category VARCHAR(30) NOT NULL,
-    Base_Dmg VARCHAR(30) NOT NULL,
-    Base_Def VARCHAR(30) NOT NULL,
+    Base_Dmg VARCHAR(30),
+    Base_Def VARCHAR(30),
     PRIMARY KEY (Item_ID)
 );
 CREATE TABLE ITEM_CLASS_REQ (
@@ -172,12 +169,12 @@ CREATE TABLE ITEM_CLASS_REQ (
 );
 
 CREATE TABLE ITEM_STATS (
-	Item_ID INTEGER NOT NULL,
-    Atk INTEGER NOT NULL,
-    Def INTEGER NOT NULL,
-    HP INTEGER NOT NULL,
-    MP INTEGER NOT NULL,
-    Spd INTEGER NOT NULL,
+	Item_ID INTEGER,
+    Atk INTEGER,
+    Def INTEGER,
+    HP INTEGER,
+    MP INTEGER,
+    Spd INTEGER,
     PRIMARY KEY (Item_ID),
     FOREIGN KEY (Item_ID) REFERENCES ITEM (Item_ID)
 );
@@ -204,11 +201,11 @@ CREATE TABLE CHAR_BAG (
 CREATE TABLE CHAR_STATS (
 	Acc_ID INTEGER NOT NULL,
     Char_Name VARCHAR(30) NOT NULL,
-    Atk INTEGER,
-    Def INTEGER,
-    HP INTEGER,
-    MP INTEGER,
-    Spd INTEGER,
+    Atk INTEGER NOT NULL,
+    Def INTEGER NOT NULL,
+    HP INTEGER NOT NULL,
+    MP INTEGER NOT NULL,
+    Spd INTEGER NOT NULL,
     PRIMARY KEY (Acc_ID, Char_Name),
     FOREIGN KEY (Acc_ID) REFERENCES CHARACTERS (Acct_ID),
     FOREIGN KEY (Char_Name) REFERENCES CHARACTERS (Name)
@@ -227,6 +224,7 @@ VALUES
 ('Quentin', 'Jenfingers', 'jquen', 'test2020','1992-05-01', 'a.jen@gmail.com'),
 ('Beau', 'McCranberry', 'bmcran', 'test2019', '1902-02-02', 'b.mccran@gmail.com'),
 ('Sam', 'Cast', 'castS', 'cast1975-21a', '1965-02-05', 's.cast@hotmail.com');
+('Mike', 'Hawk', 'hawkseyjr', 'password', '2014-09-08', 'mikehawk@email.au');
 SELECT * FROM USERS;
 
 -- NEED TO USE NULL FOR PLAYERS WHEN INSERTING THEM IF GUILDS HAVE NOT BEEN SUBMITTED YET!
@@ -243,11 +241,13 @@ VALUES
 (8, '750.2', 0, NULL),
 (9, '50.2', 0, NULL),
 (11, '65', 1, NULL);
+
 INSERT INTO ADMINS (Admin_ID, Perm_level)
 VALUES 
 (4, 5),
 (10, 5),
 (12, 5);
+
 INSERT INTO GUILD 	(Guild_name, Leader_ID, XP, Level, Gold)
 VALUES 
 ('Little Fockers', 3, 75000, 15, 150000),
@@ -257,6 +257,7 @@ VALUES
 ('Tenderloin Lovers', 8, 10000, 2, 12512512),
 ('The Gentle Giants', 9, 60000, 12, 250500),
 ('Glorious Eels', 11, 15000, 3, 50250);
+
 SELECT * FROM USERS, Players WHERE USERS.Acct_ID = Player_ID;
 UPDATE PLAYERS SET Guild = 'Little Fockers' WHERE Player_ID = 3;
 UPDATE PLAYERS SET Guild = 'The Avengers' WHERE Player_ID = 5;
@@ -265,6 +266,7 @@ UPDATE PLAYERS SET Guild = 'The Vaccum Cowboys' WHERE Player_ID = 7;
 UPDATE PLAYERS SET Guild = 'Tenderloin Lovers' WHERE Player_ID = 8;
 UPDATE PLAYERS SET Guild = 'The Gentle Giants' WHERE Player_ID = 9;
 UPDATE PLAYERS SET Guild = 'Glorious Eels' WHERE Player_ID = 11;
+
 /*
 UPDATE PLAYERS SET Guild = NULL WHERE Player_ID >= 1;
 */
@@ -287,13 +289,15 @@ VALUES
 ('Sorcerer', 'Inflicts serious damage using Staff\'s from a long range. Very weak defense.'),
 ('Necromancer', 'Uses summons to inflict damage to opponents. Weak defense.'),
 ('Hierophant', 'Uses ancient healing powers to restore health to allies. Strong close combat, weak Defense');
+
 INSERT INTO RACE (Name, Description)
 VALUES
-('Human', 'Well balanced race, good all around stats, but no edge in any stat department'),
-('Elf', 'Very agile, strong attack and speed, weaker defense and HP'),
-('Orc', 'Strong Atk and Defense, not as agile in battle and great HP'),
-('Dark Elf', 'Strong Atk, HP weaker Defense, and average speed, stronger during night time battle.'),
+('Human', 'An adaptive race with versatile and wide-spread stats but no starting ability.'),
+('Elf', 'Agile folk with inate elven magic that allows them to cast simple spells.'),
+('Orc', 'Bloodthirsty brutes with excellent might and the ability to call upon the powers of their ancestors.'),
+('Dark Elf', 'Strong Atk, HP weaker Defense, and average speed, stronger in the night.'),
 ('Dwarf', 'Impressive artisans, great craftsmen, and very strong Defense and HP, average at the other departments');
+
 INSERT INTO CHARACTERS (Acct_ID, Name, Lvl, XP, Gold, Location, Race, Class, Party_ID)
 VALUES 
 (1, 'AlexanderTheGreat', 50, 1000001, 50000, 'AmityVille', 'Human', 'Warrior', NULL),
@@ -304,6 +308,7 @@ VALUES
 (2, 'TheTerminator', 95, 1900001, 65002, 'AmityVille Castle', 'Dark Elf', 'Ranger', NULL),
 (7, 'BabyCarrot', 55, 1100001, 125000, 'City Townhall', 'Dwarf', 'Warrior', NULL),
 (8, 'TenderLove', 35, 700001, 15000, 'AmityVille', 'Elf', 'Hierophant', NULL);
+
 INSERT INTO ABILITY (Name, Mana_Cost, Description, Damage, Lv_Req, Cooldown)
 VALUES 
 ('Valor', 50, 'Decreases defense by 50 but increases Attack by 100, Speed by 100 for 10 seconds.', 0, 15, 500),
@@ -407,4 +412,5 @@ VALUES
 (33, 'Sorcerer'), (34, 'Sorcerer'), (35, 'Sorcerer'), (36, 'Sorcerer'), (37, 'Sorcerer'), (38, 'Sorcerer'), (39, 'Sorcerer'), (40, 'Sorcerer'),
 (33, 'Necromancer'), (34, 'Necromancer'), (35, 'Necromancer'), (36, 'Necromancer'), (37, 'Necromancer'), (38, 'Necromancer'), (39, 'Necromancer'), (40, 'Necromancer'),
 (33, 'Hierophant'), (34, 'Hierophant'), (35, 'Hierophant'), (36, 'Hierophant'), (37, 'Hierophant'), (38, 'Hierophant'), (39, 'Hierophant'), (40, 'Hierophant');
+
 SELECT * FROM ITEM, ITEM_CLASS_REQ WHERE ITEM.Item_ID=ITEM_CLASS_REQ.Item_ID;
