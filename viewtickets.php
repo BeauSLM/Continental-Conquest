@@ -1,6 +1,7 @@
 <?php
     include 'include/header.php';
     include 'include/left-menu.php';
+    
 ?>
                 <div class="center">
                     <div id="center-content">

@@ -10,20 +10,22 @@
                                     Search Guild
                                 </td>
                             </tr>
-                            <tr class="table_players_row">
-                                <td class="table_players_data">
-                                    Player Name :
-                                </td>
-                                <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Type Name to Search" />
-                                </td>
-                            </tr>
+                            <form action="viewguild.php" method="post">
+                                <tr class="table_players_row">
+                                    <td class="table_players_data">
+                                        Guild Name :
+                                    </td>
+                                    <td class="table_players_data">
+                                        <input class="input-fields" type="text" name="guild" value="Type Name to Search" />
+                                    </td>
+                                </tr>
 
-                            <tr class="table_players_row">
-                                <td class="table_players_data" colspan="2">
-                                    <input type ="submit" class="submit-inputs" value="Search" />
-                                </td>
-                            </tr>
+                                <tr class="table_players_row">
+                                    <td class="table_players_data" colspan="2">
+                                        <input type ="submit" class="submit-inputs" value="Search" />
+                                    </td>
+                                </tr>
+                            </form>
                         </table>
                     </div>
                 </div>

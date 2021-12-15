@@ -98,7 +98,23 @@ a:visited {
     margin-right: auto;
     margin-bottom:auto;
 }
+#table_character_stats {
+    border: 1px solid #2D3436;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:auto;
+}
 #table_players_title {
+    padding-top: 10px; 
+    padding-bottom:10px; 
+    font-weight:bold; 
+    font-size: 30px;
+    background-color:#2D3436;
+    color:gray;
+    
+}
+#table_character_title_stats {
     padding-top: 10px; 
     padding-bottom:10px; 
     font-weight:bold; 

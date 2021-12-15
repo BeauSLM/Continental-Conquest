@@ -10,12 +10,22 @@
                                     Search Character
                                 </td>
                             </tr>
+                            <form action="viewcharacter.php" method="post">
+                            <tr class="table_players_row">
+                                
+                                <td class="table_players_data">
+                                    Account ID :
+                                </td>
+                                <td class="table_players_data">
+                                    <input class="input-fields" name="acct_id" type="text" value="Type id to search" />
+                                </td>
+                            </tr>
                             <tr class="table_players_row">
                                 <td class="table_players_data">
                                     Character Name :
                                 </td>
                                 <td class="table_players_data">
-                                    <input class="input-fields" type="text" value="Type Name to Search" />
+                                    <input class="input-fields" name="char_name" type="text" value="Type Name to Search" />
                                 </td>
                             </tr>
 
@@ -24,6 +34,7 @@
                                     <input type ="submit" class="submit-inputs" value="Search" />
                                 </td>
                             </tr>
+                            </form>
                         </table>
                     </div>
                 </div>
