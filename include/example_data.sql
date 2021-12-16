@@ -1,15 +1,17 @@
 INSERT INTO USERS (Fname, Lname, Username, Password, Birthday, Email) 
 VALUES 
 ('John', 'Smith', 'jsmith', 'jsmith1993', '1996-06-06', 'john.smith@gmail.com'),
-('John', 'Sena', 'jsena', 'jsena1993', '1997-06-06', 'john.sena@gmail.com'),
-('John', 'Tev', 'jtevh', 'jtev1995', '1995-02-06', 'john.tev@gmail.com'),
-('Henry', 'Smith', 'hsmith', 'hsmith1993', '1993-02-01', 'henry.smith@gmail.com'),
-('Terry', 'Smith', 'tsmith', 'tsmith1993', '1993-01-05', 't.smith@gmail.com'),
+('John', 'Sena', 'johnsena99', 'jsena1993', '1997-06-06', 'john.sena@gmail.com'),
+('John', 'Tev', 'minecraft99', 'jtev1995', '1995-02-06', 'john.tev@gmail.com'),
+('Henry', 'Smith', 'admin', 'pass', '1993-02-01', 'henry.smith@gmail.com'),
+('Terry', 'Smith', 'epicguy', 'tsmith1993', '1993-01-05', 't.smith@gmail.com'),
+
 ('Andre', 'Astin', 'Aastin', 'Aastin1281', '1983-01-05', 'a.astin@gmail.com'),
-('John', 'Posh', 'jposh', 'posh1993', '1972-07-05', 'j.posh@hotmail.com'),
+('John', 'Posh', 'sireurope', 'posh1993', '1972-07-05', 'j.posh@hotmail.com'),
 ('Sarah', 'Posh', 'sposh', 'posh1975', '1982-02-05', 's.posh@hotmail.com'),
 ('Apostolos', 'Blizzscon', 'bscon', 'test2021', '1991-06-01', 'a.scon@hotmail.com'),
 ('Quentin', 'Jenfingers', 'jquen', 'test2020','1992-05-01', 'a.jen@gmail.com'),
+
 ('Beau', 'McCranberry', 'bmcran', 'test2019', '1902-02-02', 'b.mccran@gmail.com'),
 ('Sam', 'Cast', 'castS', 'cast1975-21a', '1965-02-05', 's.cast@hotmail.com'),
 ('Mike', 'Hawk', 'hawkseyjr', 'password', '2014-09-08', 'mikehawk@email.au');
@@ -20,14 +22,17 @@ VALUES
 INSERT INTO PLAYERS (Player_ID, Playtime, Sub_status, Guild)
 VALUES
 (1, '500.5', 'Subscribed', NULL),
-(2, '250.2', 'Unsubscribed', NULL),
+(2, '250.2', 'Subscribed', NULL),
 (3, '300.5', 'Unsubscribed', NULL),
 (5, '240.5', 'Subscribed', NULL),
+
 (6, '230.1', 'Subscribed', NULL),
 (7, '220.5', 'Trial', NULL),
 (8, '750.2', 'Unsubscribed', NULL),
 (9, '50.2', 'Unsubscribed', NULL),
-(11, '65', 'Trial', NULL);
+
+(11, '65', 'Trial', NULL),
+(13, '990', 'Subscribed', NULL);
 
 INSERT INTO ADMINS (Admin_ID, Perm_level)
 VALUES 
@@ -42,17 +47,17 @@ VALUES
 ('The Married Men', 6, 25000, 5, 2552000),
 ('The Vaccum Cowboys', 7, 40000, 8, 212410),
 ('Tenderloin Lovers', 8, 10000, 2, 12512512),
-('The Gentle Giants', 9, 60000, 12, 250500),
 ('Glorious Eels', 11, 15000, 3, 50250);
 
 UPDATE PLAYERS SET Guild = 'Little Fockers' WHERE Player_ID = 2;
 UPDATE PLAYERS SET Guild = 'Little Fockers' WHERE Player_ID = 3;
 UPDATE PLAYERS SET Guild = 'The Avengers' WHERE Player_ID = 5;
+UPDATE PLAYERS SET Guild = 'The Avengers' WHERE Player_ID = 9;
 UPDATE PLAYERS SET Guild = 'The Married Men' WHERE Player_ID = 6;
 UPDATE PLAYERS SET Guild = 'The Vaccum Cowboys' WHERE Player_ID = 7;
 UPDATE PLAYERS SET Guild = 'Tenderloin Lovers' WHERE Player_ID = 8;
-UPDATE PLAYERS SET Guild = 'The Gentle Giants' WHERE Player_ID = 9;
 UPDATE PLAYERS SET Guild = 'Glorious Eels' WHERE Player_ID = 11;
+UPDATE PLAYERS SET Guild = 'Glorious Eels' WHERE Player_ID = 13;
 
 /*
 UPDATE PLAYERS SET Guild = NULL WHERE Player_ID >= 1;
@@ -90,22 +95,38 @@ VALUES
 (1, 'AlexanderTheGreat', 50, 1000001, 50000, 'AmityVille', 'Human', 'Warrior', NULL),
 (1, 'SirJohnKnight', 40, 800001, 25000, 'JacksonVille', 'Dark Elf', 'Rogue', NULL),
 (1, 'AttilaTheHun', 25, 500001, 15000, 'City Townhall', 'Elf', 'Ranger', NULL),
+
 (2, 'JasonMamoa', 75, 1500001, 400000, 'Hospital', 'Orc', 'Warrior', NULL),
 (2, 'NotYourEveryDayHero', 60, 1200001, 35250, 'Beach', 'Orc', 'Hierophant', NULL),
 (2, 'TheTerminator', 95, 1900001, 65002, 'AmityVille Castle', 'Dark Elf', 'Ranger', NULL),
+
+(3, 'John', 2, 198, 58, 'Tarrin', 'Dwarf', 'Necromancer', NULL),
+(5, 'TheLocustGod', 33, 600000, 42778, 'The Pit', 'Dwarf', 'Sorcerer', NULL),
 (7, 'BabyCarrot', 55, 1100001, 125000, 'City Townhall', 'Dwarf', 'Warrior', NULL),
-(8, 'TenderLove', 35, 700001, 15000, 'AmityVille', 'Elf', 'Hierophant', NULL);
+(8, 'TenderLove', 35, 700001, 15000, 'AmityVille', 'Elf', 'Hierophant', NULL),
+(9, 'HowThe', 12, 40030, 2443, 'The Silent Expanse', 'Dark Elf', 'Shaman', NULL),
+(11, 'SkillIssue', 71, 1220000, 59000, 'Shrouded Woods', 'Human', 'Necromancer', NULL),
+
+(13, 'Natasha', 88, 1770050, 12221, 'The Silent Expanse', 'Elf', 'Shaman', NULL),
+(13, 'Sans', 1, 1, 0, 'Judgement Hall', 'Human', 'Sorcerer', NULL);
 
 INSERT INTO CHAR_STATS (Acc_ID, Char_Name, Atk, Def, HP, MP, Spd)
 VALUES
 (1, 'AlexanderTheGreat', 200, 300, 1000, 150, 100),
 (1, 'SirJohnKnight', 600, 50, 250, 300, 500),
 (1, 'AttilaTheHun', 100, 80, 160, 120, 310),
+
 (2, 'JasonMamoa', 400, 400, 400, 400, 400),
 (2, 'NotYourEveryDayHero', 400, 200, 500, 480, 300),
 (2, 'TheTerminator', 1000, 1800, 3200, 2800, 5000),
+
+(3, 'John', 1000, 1800, 3200, 2800, 5000),
+(5, 'TheLocustGod', 900, 1200, 4400, 200, 400),
 (7, 'BabyCarrot', 300, 200, 350, 800, 180),
-(8, 'TenderLove', 80, 90, 200, 1800, 200);
+(8, 'TenderLove', 80, 90, 200, 1800, 200),
+(9, 'HowThe', 20, 15, 5, 30, 150),
+(13, 'Natasha', 80, 90, 200, 1800, 200),
+(13, 'Sans', 1, 1, 1, 1, 1);
 
 
 INSERT INTO ABILITY (Name, Mana_Cost, Description, Damage, Lv_Req, Cooldown)
@@ -288,4 +309,4 @@ VALUES
 
 INSERT INTO PARTY (Party_id, Acct_ID, Ch_name)
 VALUES
-(1, 1, 'AlexanderThegreat'), (1, 2, 'JasonMamoa');
+(1, 1, 'AlexanderThegreat'), (1, 2, 'JasonMamoa'), (1, 13, 'Sans'), (2, 7, 'BabyCarrot'), (2, 9, 'HowThe');
