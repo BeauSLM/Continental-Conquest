@@ -1,5 +1,9 @@
 <?php
     include 'include/connectDB.php';
+    if(!isset($_COOKIE["admin"]) || !isset($_COOKIE["password"])) {
+        header("Location: index.php");
+        exit("");
+    }
     include 'include/header.php';
     include 'include/left-menu.php';
 ?>

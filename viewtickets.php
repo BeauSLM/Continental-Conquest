@@ -1,5 +1,9 @@
 <?php
     include 'include/connectDB.php';
+    if(!isset($_COOKIE['admin']) || !isset($_COOKIE['password'])) {
+        header("Location: index.php");
+        exit();
+    }
     include 'include/header.php';
     include 'include/left-menu.php';
     
@@ -8,13 +12,13 @@
                     <div id="center-content">
                         <table id="table_players">
                             <tr class="table_players_row">
-                                <td class="table_players_data" id="table_players_title" colspan="7" >
+                                <td class="table_players_data" id="table_players_title" colspan="8" >
                                     Tickets
                                 </td>
                             </td>
                             <tr class="table_players_row">
                                 <td class="table_players_header_data">
-                                    ID
+                                    Ticket ID
                                 </td>
                                 <td class="table_players_header_data">
                                     Issue
@@ -29,11 +33,14 @@
                                     Player ID
                                 </td>
                                 <td class="table_players_header_data">
-                                    Admin ID
+                                    Assigned Admin ID
                                 </td>
                                 <td class="table_players_header_data">
                                     Status
-                                </td>                
+                                </td>
+                                <td class="table_players_header_data">
+                                    View Ticket
+                                </td>             
                             </tr>
                             <?php
                                 $result = $db->connection->query('SELECT * from TICKET');
@@ -60,6 +67,9 @@
                                                 <td class='table_players_data'>
                                                     ".$row['Status']."
                                                 </td>
+                                                <td class='table_players_header_data'>
+                                                    <a href='editticket.php?ticket_id=".$row['Ticket_ID']."'>Edit Ticket</a>
+                                                </td> 
                                             </tr>
                                         ";
                                 }

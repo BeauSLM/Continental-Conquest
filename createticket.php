@@ -1,26 +1,11 @@
 <?php
     include 'include/connectDB.php';
-    if(!isset($_COOKIE["admin"]) || !isset($_COOKIE["password"])) {
+    if(isset($_COOKIE["admin"]) && isset($_COOKIE["password"])) {
         header("Location: index.php");
         exit("");
     }
     include 'include/header.php';
     include 'include/left-menu.php';
-    //viewplayer.php?char_name=AlexanderTheGreat&acct_id
-    if(isset($_POST["acct_id"])) {
-        $acct_id = $_POST["acct_id"];
-        $char_name = $_POST["char_name"];
-    } else {
-        $acct_id = $_GET["acct_id"];
-        $char_name = $_GET["char_name"];
-    }
-
-    //finds the character
-    $stmt = $db->connection->prepare('SELECT * FROM CHARACTERS WHERE Acct_ID = ? AND Name = ?');
-    $stmt->bind_param('is', $acct_id, $char_name); // 's' specifies the variable type => 'string'
-
-    $stmt->execute();
-    $result = $stmt->get_result();
 ?>
 
 <div class='center'>
@@ -28,7 +13,7 @@
     <table id='table_players'>
         <tr class='table_players_row'>
             <td class='table_players_data' id='table_players_title' colspan='3' >
-                Editing Character : 
+                Create Ticket : 
                     <?php 
                         if ($result->num_rows == 0) { 
                             echo "<br/>Character not found.</td></tr>";

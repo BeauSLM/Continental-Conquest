@@ -6,16 +6,16 @@
     }
     include 'include/header.php';
     include 'include/left-menu.php';
-    //viewplayer.php?char_name=AlexanderTheGreat&acct_id
-    if(isset($_POST["guild"])) {
-        $guild = $_POST["guild"];
+
+    if(isset($_POST["ticket_id"])) {
+        $ticket_id = $_POST["ticket_id"];
     } else {
-        $guild = $_GET["guild"];
+        $ticket_id = $_GET["ticket_id"];
     }
 
-    //finds the player
-    $stmt = $db->connection->prepare('SELECT * FROM GUILD WHERE Guild_name = ?');
-    $stmt->bind_param('s', $guild); // 's' specifies the variable type => 'string'
+    //finds the ticket
+    $stmt = $db->connection->prepare('SELECT * FROM TICKET WHERE Ticket_ID = ?');
+    $stmt->bind_param('i', ticket_id);
 
     $stmt->execute();
     $result = $stmt->get_result();
@@ -26,32 +26,32 @@
     <table id='table_players'>
         <tr class='table_players_row'>
             <td class='table_players_data' id='table_players_title' colspan='3' >
-                Editing Guild : 
-                    <?php 
+                Editing Ticket : ID = 
+                    <?php
                         if ($result->num_rows == 0) { 
-                            echo "<br/>Guild not found.</td></tr>";
+                            echo "<br/>Ticket not found.</td></tr>";
                         } else {
                             $row = $result->fetch_row();
                             echo $row[0];
         echo "
                 </td>
             </tr>
-            <form action='updateguild.php' method='post'>
-            <input type='hidden' name='guild_name' value='".$guild."'/>
+            <form action='updateticket.php' method='post'>
+            <input type='hidden' name='ticket_id' value='".$ticket_id."'/>
             <tr class='table_players_row'>
                 <td class='table_players_data'>
-                    Guild Name :
+                    Issue :
                 </td>
                 <td class='table_players_data'>
-                    ".$row[0]."
+                    ".$row[1]."
                 </td>
             </tr>
             <tr class='table_players_row'>
                 <td class='table_players_data'>
-                    Leader ID :
+                    Category :
                 </td>
                 <td class='table_players_data'>
-                    <input name='leader_id' class='input-fields' type='text' value='".$row[1]."' />
+                    <input name='category' class='input-fields' type='text' value='".$row[1]."' />
                 </td>
             </tr>
             <tr class='table_players_row'>
@@ -90,8 +90,3 @@
         </table>
     </div>
 </div>
-
-<?php
-    include 'include/right-menu.php';
-    include 'include/footer.php';
-?>
