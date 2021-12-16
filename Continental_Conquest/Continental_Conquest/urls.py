@@ -30,7 +30,7 @@ router.register(r'raceability', views.RaceabilityViewSet)
 router.register(r'ability', views.AbilityViewSet)
 router.register(r'party', views.PartyViewSet)
 router.register(r'itemclassreq', views.ItemclassreqViewSet)
-router.register(r'race', views.RaceabilityViewSet)
+router.register(r'race', views.RaceViewSet)
 router.register(r'class', views.ClassViewSet)
 
 urlpatterns = [
