@@ -24,18 +24,18 @@ class ClassabilityViewSet(viewsets.ModelViewSet):
     serializer_class = ClassabilitySerializer
 
 class ItemViewSet(viewsets.ModelViewSet):
-    query = Item.objects.all()
+    queryset = Item.objects.all()
     serializer_class = ItemSerializer
 
 class ItemstatsViewSet(viewsets.ModelViewSet):
-    query = ItemStats.objects.all()
+    queryset = ItemStats.objects.all()
     serializer_class = ItemstatSerializer
 
 class CharstatsViewSet(viewsets.ModelViewSet):
-    query = CharStats.objects.all()
+    queryset = CharStats.objects.all()
     serializer_class = CharstatsSerializer
 
 class RaceabilityViewSet(viewsets.ModelViewSet):
-    query = RaceAbility.objects.all()
+    queryset = RaceAbility.objects.all()
     serializer_class = RaceabilitySerializer
 
