@@ -32,6 +32,8 @@
         echo "
                 </td>
             </tr>
+            <form action='updateguild.php' method='post'>
+            <input type='hidden' name='guild_name' value='".$guild."'/>
             <tr class='table_players_row'>
                 <td class='table_players_data'>
                     Guild Name :
@@ -45,7 +47,7 @@
                     Leader ID :
                 </td>
                 <td class='table_players_data'>
-                    <input class='input-fields' type='text' value='".$row[1]."' />
+                    <input name='leader_id' class='input-fields' type='text' value='".$row[1]."' />
                 </td>
             </tr>
             <tr class='table_players_row'>
@@ -53,7 +55,7 @@
                     Experience :
                 </td>
                 <td class='table_players_data'>
-                    <input class='input-fields' type='text' value='".$row[2]."' />
+                    <input name='xp' class='input-fields' type='text' value='".$row[2]."' />
                 </td>
             </tr>
             <tr class='table_players_row'>
@@ -61,7 +63,7 @@
                     Level :
                 </td>
                 <td class='table_players_data'>
-                    ".$row[3]."
+                    <input name='level' class='input-fields' type='text' value='".$row[3]."' />
                 </td>
             </tr>
             <tr class='table_players_row'>
@@ -69,14 +71,15 @@
                     Gold :
                 </td>
                 <td class='table_players_data'>
-                    <input class='input-fields' type='text' value='".$row[4]."' />
+                    <input name='gold' class='input-fields' type='text' value='".$row[4]."' />
                 </td>
             </tr>
             <tr class='table_players_row'>
                 <td class='table_players_data' colspan='2'>
-                    <input type ='submit' class='submit-inputs' value='Update' />
+                    <input type ='submit' class='submit-inputs' value='Update Guild' />
                 </td>
             </tr>
+            </form>
             ";
             }
         ?>

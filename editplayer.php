@@ -31,12 +31,22 @@
                         echo "
                                 </td>
                             </tr>
+                            <form action='updateplayer.php' method='post'>
+                            <input type='hidden' name='acct_id' value='".$acct_id."'/>
                             <tr class='table_players_row'>
                                 <td class='table_players_data'>
                                     Username :
                                 </td>
                                 <td class='table_players_data'>
-                                    <input class='input-fields' type='text' value='".$row[7]."' />
+                                    <input name='username' class='input-fields' type='text' value='".$row[7]."' />
+                                </td>
+                            </tr>
+                            <tr class='table_players_row'>
+                                <td class='table_players_data'>
+                                    Password :
+                                </td>
+                                <td class='table_players_data'>
+                                    <input name='password' class='input-fields' type='text' value='".$row[8]."' />
                                 </td>
                             </tr>
                             <tr class='table_players_row'>
@@ -44,7 +54,7 @@
                                     First Name :
                                 </td>
                                 <td class='table_players_data'>
-                                    <input class='input-fields' type='text' value='".$row[5]."' />
+                                    <input name='fname' class='input-fields' type='text' value='".$row[5]."' />
                                 </td>
                             </tr>
                             <tr class='table_players_row'>
@@ -52,7 +62,7 @@
                                     Last Name :
                                 </td>
                                 <td class='table_players_data'>
-                                    <input class='input-fields' type='text' value='".$row[6]."' />
+                                    <input name='lname' class='input-fields' type='text' value='".$row[6]."' />
                                 </td>
                             </tr>
                             <tr class='table_players_row'>
@@ -60,7 +70,7 @@
                                     Guild :
                                 </td>
                                 <td class='table_players_data'>
-                                    ".$row[3]."
+                                    <input name='guild' class='input-fields' type='text' value='".$row[3]."' />
                                 </td>
                             </tr>
                             <tr class='table_players_row'>
@@ -68,7 +78,7 @@
                                     Email :
                                 </td>
                                 <td class='table_players_data'>
-                                    <input class='input-fields' type='text' value='".$row[10]."' />
+                                    <input name='email' class='input-fields' type='text' value='".$row[10]."' />
                                 </td>
                             </tr>
                             <tr class='table_players_row'>
@@ -76,7 +86,7 @@
                                     Subcription Status:
                                 </td>
                                 <td class='table_players_data'>
-                                    <select class='input-fields'id='subscription-selector'> ";
+                                    <select name='sub_status' class='input-fields' id='subscription-selector'> ";
                                         if($row[2] == 'Subscribed') {
                                             echo "
                                             <option value='Subscribed' selected>Subscribed</option>
@@ -107,6 +117,7 @@
                                     <input type ='submit' class='submit-inputs' value='Update' />
                                 </td>
                             </tr>
+                            </form>
                             ";
                             }
                         ?>
