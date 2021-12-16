@@ -56,7 +56,7 @@
                                     Gold
                                 </td>
                                 <td class="table_players_header_data">
-                                    View Character
+                                    Party Members List
                                 </td>                  
                             </tr>
                             <?php

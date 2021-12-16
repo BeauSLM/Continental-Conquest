@@ -49,7 +49,7 @@
                                     $stmt->bind_param('i', $char['Acct_ID']);
 
                                     $stmt->execute();
-                                    $username = $stmt->get_result()->fetch_row()[4];
+                                    $username = $stmt->get_result()->fetch_row()[3];
                                     echo "
                                     <tr class='table_players_row' colspan='9'>
                                         <td class='table_players_data'>
