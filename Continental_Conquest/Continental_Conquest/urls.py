@@ -19,6 +19,13 @@ from api import views
 
 router = routers.DefaultRouter()
 router.register(r'players', views.PlayerViewSet)
+router.register(r'characters', views.CharacterViewSet)
+router.register(r'guild', views.GuildViewSet)
+router.register(r'ticket', views.TicketViewSet)
+router.register(r'classability', views.ClassabilityViewSet)
+router.register(r'item', views.ItemViewSet)
+router.register(r'itemstats', views.ItemstatsViewSet)
+router.register(r'charstats', views.CharstatsViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
