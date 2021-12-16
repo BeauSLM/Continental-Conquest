@@ -35,7 +35,7 @@ class Admins(models.Model):
 
 class CharBag(models.Model):
     acc = models.OneToOneField('Characters', models.DO_NOTHING, db_column='Acc_ID', primary_key=True)  # Field name made lowercase.
-    char_name = models.ForeignKey('Characters', models.DO_NOTHING, db_column='Char_Name')  # Field name made lowercase.
+    char_name = models.ForeignKey('Characters', models.DO_NOTHING, db_column='Char_Name', related_name='+')  # Field name made lowercase.
     item = models.ForeignKey('Item', models.DO_NOTHING, db_column='Item_ID')  # Field name made lowercase.
 
     class Meta:
@@ -58,7 +58,7 @@ class CharSlots(models.Model):
 
 class CharStats(models.Model):
     acc = models.OneToOneField('Characters', models.DO_NOTHING, db_column='Acc_ID', primary_key=True)  # Field name made lowercase.
-    char_name = models.ForeignKey('Characters', models.DO_NOTHING, db_column='Char_Name')  # Field name made lowercase.
+    char_name = models.ForeignKey('Characters', models.DO_NOTHING, db_column='Char_Name', related_name='+')  # Field name made lowercase.
     atk = models.IntegerField(db_column='Atk')  # Field name made lowercase.
     def_field = models.IntegerField(db_column='Def')  # Field name made lowercase. Field renamed because it was a Python reserved word.
     hp = models.IntegerField(db_column='HP')  # Field name made lowercase.
@@ -109,7 +109,7 @@ class ClassAbility(models.Model):
 
 class FriendList(models.Model):
     acct = models.OneToOneField('Players', models.DO_NOTHING, db_column='Acct_ID', primary_key=True)  # Field name made lowercase.
-    friend = models.ForeignKey('Players', models.DO_NOTHING, db_column='Friend_ID')  # Field name made lowercase.
+    friend = models.ForeignKey('Players', models.DO_NOTHING, db_column='Friend_ID', related_name='+')  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -119,7 +119,7 @@ class FriendList(models.Model):
 
 class Guild(models.Model):
     guild_name = models.CharField(db_column='Guild_name', primary_key=True, max_length=30)  # Field name made lowercase.
-    leader = models.ForeignKey('Players', models.DO_NOTHING, db_column='Leader_ID')  # Field name made lowercase.
+    leader = models.ForeignKey('Players', models.DO_NOTHING, db_column='Leader_ID', related_name='+')  # Field name made lowercase.
     xp = models.IntegerField(db_column='XP')  # Field name made lowercase.
     level = models.IntegerField(db_column='Level')  # Field name made lowercase.
     gold = models.IntegerField(db_column='Gold')  # Field name made lowercase.
@@ -171,7 +171,7 @@ class ItemStats(models.Model):
 class Party(models.Model):
     party_id = models.IntegerField(db_column='Party_id', primary_key=True)  # Field name made lowercase.
     acct = models.ForeignKey('Players', models.DO_NOTHING, db_column='Acct_ID')  # Field name made lowercase.
-    ch_name = models.ForeignKey(Characters, models.DO_NOTHING, db_column='Ch_name')  # Field name made lowercase.
+    ch_name = models.ForeignKey(Characters, models.DO_NOTHING, db_column='Ch_name', related_name='+')  # Field name made lowercase.
 
     class Meta:
         managed = False
