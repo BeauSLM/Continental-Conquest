@@ -7,8 +7,9 @@
     }
 
     if(isset($_POST['username']) && isset($_POST['password'])) {
+        //$_POST['username'] represents account ID only for this page.
         $process = true;
-        $stmt = $db->connection->prepare('SELECT * FROM USERS, ADMINS WHERE Acct_ID = Admin_ID AND USERS.Username = ? AND USERS.Password = ?');
+        $stmt = $db->connection->prepare('SELECT * FROM USERS, ADMINS WHERE Acct_ID = Admin_ID AND USERS.Acct_ID = ? AND USERS.Password = ?');
         $stmt->bind_param('ss', $_POST['username'], $_POST['password']); // 's' specifies the variable type => 'string'
     
         $stmt->execute();
@@ -49,10 +50,10 @@
                                 <tr class='table_players_row'>
                                     
                                     <td class='table_players_data'>
-                                        Admin Username :
+                                        Admin ID :
                                     </td>
                                     <td class='table_players_data'>
-                                        <input class='input-fields' onfocus=\"this.value=''\" name='username' type='text' value='Enter Username' />
+                                        <input class='input-fields' onfocus=\"this.value=''\" name='username' type='text' value='Enter Admin ID' />
                                     </td>
                                 </tr>
                                 <tr class='table_players_row'>

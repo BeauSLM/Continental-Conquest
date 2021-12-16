@@ -16,7 +16,7 @@
                 Create Ticket : 
             </td>
         </tr>
-            <form action='create_ticket.php' method='post'>
+            <form action='addticket.php' method='post'>
                 <tr class='table_players_row'>
                     <td class='table_players_data'>
                         Player ID :
@@ -38,7 +38,7 @@
                         Issue
                     </td>
                     <td class='table_players_data'>
-                        <textarea class="input-fields" onfocus="this.value=''" name="w3review" rows="4" cols="50" value>Type your issue here</textarea>
+                        <textarea class="input-fields" onfocus="this.value=''" name="issue" rows="4" cols="50" value>Type your issue here</textarea>
                     </td>
                 </tr>
                 <tr class='table_players_row'>
@@ -46,8 +46,13 @@
                         Category :
                     </td>
                     <td class='table_players_data'>
-                        <input  class='input-fields' onfocus="this.value=''" name='category' type='text' value='Type Category' />
-                    </td>
+                                <select name='category' class='input-fields' id='category-selector'> ";
+                                    <option value='Character'>Character</option>
+                                    <option value='Account'>Account</option>
+                                    <option value='Gameplay'>Gameplay</option>
+                                    <option value='Other'>Other</option>
+                                </select>
+                            </td>
                 </tr>
                 <tr class='table_players_row'>
                     <td class='table_players_data' colspan='2'>

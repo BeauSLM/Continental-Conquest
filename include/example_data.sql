@@ -68,9 +68,9 @@ INSERT FRIEND_LIST (Acct_ID, Friend_ID) VALUES
 
 INSERT INTO TICKET (Issue, Category, Date, Player_ID, Admin_ID, Status)
 VALUES
-('Stuck at a certain location, can\'t move character.', 'Gameplay', '2020-05-05', 1, NULL, 'Pending'),
-('Forgot Password, and the password of my email.', 'Login', '2021-07-05', 2, 12, 'Resolved'),
-('Game glitched and my character got a level reset, lots 1 million experience.', 'Gameplay', '2021-08-05', 6, 12, 'Under Review');
+('Stuck at a certain location, can\'t move character.', 'Character', '2020-05-05', 1, NULL, 'Pending'),
+('Forgot the password of my email, could you please change it to temp.email@gmail.com?', 'Account', '2021-07-05', 2, 12, 'Resolved'),
+('Game glitched and my character got a level reset, lots 1 million experience.', 'Character', '2021-08-05', 6, 12, 'Under Review');
 
 INSERT INTO CLASS (Name, Description) 
 VALUES
@@ -310,3 +310,4 @@ VALUES
 INSERT INTO PARTY (Party_id, Acct_ID, Ch_name)
 VALUES
 (1, 1, 'AlexanderThegreat'), (1, 2, 'JasonMamoa'), (1, 13, 'Sans'), (2, 7, 'BabyCarrot'), (2, 9, 'HowThe');
+SELECT * FROM TICKET;

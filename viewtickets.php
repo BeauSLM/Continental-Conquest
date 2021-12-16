@@ -67,7 +67,7 @@
                                                 <td class='table_players_data'>
                                                     ".$row['Status']."
                                                 </td>
-                                                <td class='table_players_header_data'>
+                                                <td class='table_players_data'>
                                                     <a href='editticket.php?ticket_id=".$row['Ticket_ID']."'>Edit Ticket</a>
                                                 </td> 
                                             </tr>

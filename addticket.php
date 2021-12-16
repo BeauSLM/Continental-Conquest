@@ -1,6 +1,6 @@
 <?php
     include 'include/connectDB.php';
-    if(!isset($_COOKIE["admin"]) || !isset($_COOKIE["password"])) {
+    if(isset($_COOKIE["admin"]) || isset($_COOKIE["password"])) {
         header("Location: index.php");
         exit("");
     }
@@ -13,9 +13,9 @@
         $player_id = $_POST["player_id"];
         $password = $_POST["password"];
         $category = $_POST["category"];
-        $issue = $_POST["issue"]
+        $issue = $_POST["issue"];
 
-        $stmt = $db->connection->prepare('SELECT * FROM USERS,PLAYERS WHERE Acct_ID=Player_ID AND Acct_ID = ? AND Password = ?');
+        $stmt = $db->connection->prepare('SELECT * FROM USERS, PLAYERS WHERE Acct_ID=Player_ID AND Acct_ID = ? AND Password = ?');
         $stmt->bind_param('is', $player_id, $password);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -24,7 +24,7 @@
             echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Create Ticket Failed, Player ID doesn't exist, or password was invalid.
+                        Create Ticket Failed: Player ID doesn't exist or password was invalid.
                         <br/><a href='createticket.php'>Create Ticket</a>
                         <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
@@ -32,33 +32,27 @@
                 ";
         }
         else {
-            $stmt = $db->connection->prepare('SELECT * FROM CHAR_BAG WHERE Acc_ID = ? AND Char_Name = ? AND Item_ID = ?');
-            $stmt->bind_param('isi', $acct_id, $char_name, $item_ID);
+            $null_value = NULL;
+            $status = 'Pending';
+            $date = date("Y-m-d");
+            $stmt = $db->connection->prepare('INSERT INTO TICKET(Issue, Category, Date, Player_ID, Admin_ID, Status) VALUES(?, ?, ?, ?, ?, ?)');
+            $stmt->bind_param('sssiis', $issue, $category, $date, $player_id, $null_value, $status);
             $stmt->execute();
-            $checkItem = $stmt->get_result();
-
-            if($checkItem->num_rows > 0) {
+            if($stmt->affected_rows == 0) {
                 echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Insert Failed: User already has item in bag. Go back to main page. <a href='index.php'>Index</a>
-                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
-                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        Ticket failed. Please try again.
+                        <br/><a href='createticket.php'>Create another ticket</a> 
                         <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
-                </div>
-                ";
+                </div> ";
             } else {
-                $null_value = NULL;
-                $stmt = $db->connection->prepare('INSERT INTO TICKET(Issue, Category, Player_ID,) VALUES(?, ?,  ?)');
-                $stmt->bind_param('isi', $acct_id, $char_name, $item_ID);
-                $stmt->execute();
                 echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Insert Success: Item with criteria : Account ID -> ".$acct_id."., Character Name-> ".$char_name.", Item ID -> ".$item_ID." was added to bag.
-                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
-                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        Ticket successfully created.
+                        <br/><a href='createticket.php'>Create another ticket</a> 
                         <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div> ";
@@ -68,10 +62,10 @@
         //not correct fields
         echo "
             <div class='center'>
-                <div id='center-content'>
-                    Error: You have not specified the proper fields, this shouldn't happen.
-                    <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
-                    <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                <div id='center-conte
+                nt'>
+                    Create Ticket Failed: You have not specified the proper fields.
+                    <br/><a href='createticket.php'>Create a ticket</a>
                     <br/><a href='index.php'>Return to Main Menu</a>
                 </div>
             </div>

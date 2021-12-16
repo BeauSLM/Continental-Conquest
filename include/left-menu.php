@@ -22,4 +22,18 @@
                         <a href="topguilds.php">View Top Guilds</a><br>
                         <a href="searchguild.php">Search Guilds</a><br>
                     </div>
+                    <?php
+                        if(isset($_COOKIE["admin"]) || isset($_COOKIE["password"])) {
+                        
+                        } else {
+                            echo "
+                            <div class='menu-header'>
+                                Ticket Menu
+                            </div>
+                            <div class='menu-content'>
+                                <a href='createticket.php'>Create Ticket</a><br>
+                            </div>
+                            ";
+                        }
+                    ?>
                 </div>
