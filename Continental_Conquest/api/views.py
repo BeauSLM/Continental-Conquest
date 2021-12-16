@@ -44,7 +44,7 @@ class AbilityViewSet(viewsets.ModelViewSet):
     serializer_class = AbilitySerializer
 
 class PartyViewSet(viewsets.ModelViewSet):
-    queryset = Part.objects.all()
+    queryset = Party.objects.all()
     serializer_class = PartySerializer
 
 class ItemclassreqViewSet(viewsets.ModelViewSet):
