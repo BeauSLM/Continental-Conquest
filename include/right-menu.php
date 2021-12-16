@@ -12,9 +12,9 @@
                                         Admin Panel
                                     </div>                    
                                     <div class='menu-content'>
-                                        <a href='editplayer.php'>Edit Player</a><br>
-                                        <a href='editcharacter.php'>Edit Character</a><br>
-                                        <a href='editguild.php'>Edit Guild</a><br>
+                                        <a href='selecteditplayer.php'>Edit Player</a><br>
+                                        <a href='selecteditcharacter.php'>Edit Character</a><br>
+                                        <a href='selecteditguild.php'>Edit Guild</a><br>
                                         <a href='viewtickets.php'>View Tickets</a><br>
                                     </div>
                                     ";

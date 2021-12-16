@@ -20,7 +20,7 @@
                     <div id="center-content">
                         <table id="table_players">
                             <tr class="table_players_row">
-                                <td class="table_players_data" id="table_players_title" colspan="8" >
+                                <td class="table_players_data" id="table_players_title" colspan="7" >
                                     Viewing Player : 
                                     <?php 
                                         if ($result->num_rows == 0) { 
@@ -34,6 +34,9 @@
                             <tr class="table_players_row">
                                 <td class="table_players_header_data">
                                     Username
+                                </td>
+                                <td class="table_players_header_data">
+                                    Account ID
                                 </td>
                                 <td class="table_players_header_data">
                                     Playtime
@@ -56,6 +59,9 @@
                                 echo "  <tr class='table_players_row'>
                                             <td class='table_players_data'>
                                                 ".$row[7]."
+                                            </td>
+                                            <td class='table_players_data'>
+                                                ".$row[0]."
                                             </td>
                                             <td class='table_players_data'>
                                                 ".$row[1]."

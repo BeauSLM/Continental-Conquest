@@ -12,7 +12,7 @@
     }
 
     //finds the character
-    $stmt = $db->connection->prepare('SELECT * FROM CHARACTERS WHERE Acct_ID = ? AND name = ?');
+    $stmt = $db->connection->prepare('SELECT * FROM CHARACTERS WHERE Acct_ID = ? AND Name = ?');
     $stmt->bind_param('is', $acct_id, $char_name); // 's' specifies the variable type => 'string'
 
     $stmt->execute();

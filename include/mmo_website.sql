@@ -41,7 +41,7 @@ CREATE TABLE USERS (
 CREATE TABLE PLAYERS (
 	Player_ID INTEGER NOT NULL,
     Playtime VARCHAR(30) NOT NULL,
-    Sub_status TINYINT(1) NOT NULL,
+    Sub_status VARCHAR(20) NOT NULL,
 	Guild VARCHAR(30) DEFAULT NULL,
     PRIMARY KEY (Player_ID),
     FOREIGN KEY (Player_ID) REFERENCES USERS (Acct_ID)
@@ -241,15 +241,15 @@ SELECT * FROM USERS;
 -- CONSTRAIN A FOREIGN KEY TO PLAYER TABLE.
 INSERT INTO PLAYERS (Player_ID, Playtime, Sub_status, Guild)
 VALUES
-(1, '500.5', 0, NULL),
-(2, '250.2', 0, NULL),
-(3, '300.5', 0, NULL),
-(5, '240.5', 1, NULL),
-(6, '230.1', 1, NULL),
-(7, '220.5', 0, NULL),
-(8, '750.2', 0, NULL),
-(9, '50.2', 0, NULL),
-(11, '65', 1, NULL);
+(1, '500.5', 'Subscribed', NULL),
+(2, '250.2', 'Unsubscribed', NULL),
+(3, '300.5', 'Unsubscribed', NULL),
+(5, '240.5', 'Subscribed', NULL),
+(6, '230.1', 'Subscribed', NULL),
+(7, '220.5', 'Trial', NULL),
+(8, '750.2', 'Unsubscribed', NULL),
+(9, '50.2', 'Unsubscribed', NULL),
+(11, '65', 'Trial', NULL);
 
 INSERT INTO ADMINS (Admin_ID, Perm_level)
 VALUES 
@@ -515,3 +515,6 @@ VALUES
 SELECT * FROM ITEM, ITEM_CLASS_REQ WHERE ITEM.Item_ID=ITEM_CLASS_REQ.Item_ID;
 SELECT * FROM ABILITY JOIN RACE_ABILITY WHERE Abil_name = Name AND Race = 'Elf' AND Lv_Req <= 100 UNION ALL SELECT * FROM ABILITY JOIN CLASS_ABILITY WHERE Abil_name = Name AND Class = 'Ranger' AND Lv_Req <= 100 ORDER BY Lv_Req ASC;
 SELECT * FROM PLAYERS, USERS WHERE Player_ID=Acct_ID;
+
+SELECT * FROM PLAYERS, USERS WHERE Player_ID = 1 AND Player_ID=Acct_ID;
+DELETE FROM CHAR_SLOTS WHERE Acc_ID = 1 AND Char_Name = 'AlexanderTheGreat' AND Item_ID=1;
