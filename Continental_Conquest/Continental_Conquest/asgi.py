@@ -1,5 +1,5 @@
 """
-ASGI config for Continential_Conquest project.
+ASGI config for Continental_Conquest project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Continential_Conquest.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Continental_Conquest.settings')
 
 application = get_asgi_application()
