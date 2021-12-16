@@ -19,10 +19,10 @@
             <form action='create_ticket.php' method='post'>
                 <tr class='table_players_row'>
                     <td class='table_players_data'>
-                        Player Usermame :
+                        Player ID :
                     </td>
                     <td class='table_players_data'>
-                        <input class="input-fields" onfocus="this.value=''" type="text" name="username" value="Type Username" />
+                        <input class="input-fields" onfocus="this.value=''" type="text" name="player_id" value="Type Username" />
                     </td>
                 </tr>
                 <tr class='table_players_row'>

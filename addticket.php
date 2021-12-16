@@ -8,15 +8,15 @@
     include 'include/left-menu.php';
     //viewcharacter.php?char_name=AlexanderTheGreat&acct_id
     
-    if(isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["category"]) && isset($_POST["issue"])) {
+    if(isset($_POST["player_id"]) && isset($_POST["password"]) && isset($_POST["category"]) && isset($_POST["issue"])) {
         //if we have set all the post variables when calling remove item
-        $username = $_POST["username"];
+        $player_id = $_POST["player_id"];
         $password = $_POST["password"];
         $category = $_POST["category"];
         $issue = $_POST["issue"]
 
-        $stmt = $db->connection->prepare('SELECT * FROM USERS WHERE Username = ? AND Password = ?');
-        $stmt->bind_param('ss', $item_ID);
+        $stmt = $db->connection->prepare('SELECT * FROM USERS,PLAYERS WHERE Acct_ID=Player_ID AND Acct_ID = ? AND Password = ?');
+        $stmt->bind_param('is', $player_id, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -24,9 +24,8 @@
             echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Insert Failed: Item ID does not exist in database.
-                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
-                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        Create Ticket Failed, Player ID doesn't exist, or password was invalid.
+                        <br/><a href='createticket.php'>Create Ticket</a>
                         <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
@@ -50,7 +49,8 @@
                 </div>
                 ";
             } else {
-                $stmt = $db->connection->prepare('INSERT INTO CHAR_BAG(Acc_ID, Char_Name, Item_ID) VALUES(?, ?,  ?)');
+                $null_value = NULL;
+                $stmt = $db->connection->prepare('INSERT INTO TICKET(Issue, Category, Player_ID,) VALUES(?, ?,  ?)');
                 $stmt->bind_param('isi', $acct_id, $char_name, $item_ID);
                 $stmt->execute();
                 echo "
