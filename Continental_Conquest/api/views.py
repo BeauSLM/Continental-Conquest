@@ -35,3 +35,7 @@ class CharstatsViewSet(viewsets.ModelViewSet):
     query = CharStats.objects.all()
     serializer_class = CharstatsSerializer
 
+class RaceabilityViewSet(viewsets.ModelViewSet):
+    query = RaceAbility.objects.all()
+    serializer_class = RaceabilitySerializer
+
