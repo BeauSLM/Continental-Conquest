@@ -144,49 +144,6 @@
                 </div>
                 ";
             }
-
-//-------------------------------------------
-
-/*
-            //if they're a leader of any guild but we're switching their guild, returns error
-            if($checkLeader->num_rows > 0 && $checkUser->get_row()[10] != $guild) {
-                echo "
-                    <div class='center'>
-                        <div id='center-content'>
-                            Cannot change guild as the selected user is a leader of a guild. Go back to main page. <a href='index.php'>Index</a>
-                        </div>
-                    </div>
-                    ";              
-            } else {
-                //They aren't a leader of a guild and it checks if the guild doesn't exist (but isn't empty.)
-                if($checkGuild->num_rows == 0 && $guild != "") {
-                    echo "
-                    <div class='center'>
-                        <div id='center-content'>
-                            Trying to change to guild that doesn't exist. Try again. <a href='index.php'>Index</a>
-                        </div>
-                    </div>
-                    ";
-                }
-                else {
-                    //guild exists or guild=""
-                    $stmt1 = $db->connection->prepare('UPDATE USERS SET Fname = ?, Lname = ?, Username = ?, Password = ?, Email = ? WHERE Acct_ID = ?');
-                    $stmt1->bind_param('sssssi', $fname, $lname, $username, $password, $email, $acct_id);
-                    $stmt1->execute();
-    
-                    $stmt2 = $db->connection->prepare('UPDATE PLAYERS SET Sub_status = ?, Guild = ? WHERE Player_ID = ?');
-                    $stmt2->bind_param('ssi', $sub_status, $guild, $acct_id);
-                    $stmt2->execute();
-
-                    echo "
-                    <div class='center'>
-                        <div id='center-content'>
-                            Player successfully updated. Go to main page. <a href='index.php'>Index</a>".$guild."
-                        </div>
-                    </div>
-                    ";
-                }
-            }*/
         }
     }
     else {
@@ -195,11 +152,6 @@
             <div class='center'>
                 <div id='center-content'>
                     You have not specified the proper fields, this shouldn't happen. Go back to main page. <a href='index.php'>Index</a>
-                    ".$_POST["guild_name"]." -
-                    ".$_POST["leader_id"]." -
-                    ".$_POST["xp"]." -
-                    ".$_POST["level"]." -
-                    ".$_POST["gold"]."
                 </div>
             </div>
             ";

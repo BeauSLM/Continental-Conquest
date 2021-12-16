@@ -85,11 +85,6 @@
             <div class='center'>
                 <div id='center-content'>
                     You have not specified the proper fields, this shouldn't happen. Go back to main page. <a href='index.php'>Index</a>
-                    ".$_POST["guild_name"]." -
-                    ".$_POST["leader_id"]." -
-                    ".$_POST["xp"]." -
-                    ".$_POST["level"]." -
-                    ".$_POST["gold"]."
                 </div>
             </div>
             ";

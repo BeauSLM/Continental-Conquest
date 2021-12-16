@@ -34,75 +34,84 @@
         echo "
                 </td>
             </tr>
-            <tr class='table_players_row'>
-                <td class='table_players_data'>
-                    Player ID :
-                </td>
-                <td class='table_players_data'>
-                    ".$row[0]."
-                </td>
-            </tr>
-            <tr class='table_players_row'>
-                <td class='table_players_data'>
-                    Character Name :
-                </td>
-                <td class='table_players_data'>
-                    ".$row[1]."
-                </td>
-            </tr>
-            <tr class='table_players_row'>
-                <td class='table_players_data'>
-                    Level :
-                </td>
-                <td class='table_players_data'>
-                    <input class='input-fields' type='text' value='".$row[2]."' />
-                </td>
-            </tr>
-            <tr class='table_players_row'>
-                <td class='table_players_data'>
-                    Experience :
-                </td>
-                <td class='table_players_data'>
-                    ".$row[3]."
-                </td>
-            </tr>
-            <tr class='table_players_row'>
-                <td class='table_players_data'>
-                    Gold :
-                </td>
-                <td class='table_players_data'>
-                    <input class='input-fields' type='text' value='".$row[4]."' />
-                </td>
-            </tr>
-            <tr class='table_players_row'>
-                <td class='table_players_data'>
-                    Location :
-                </td>
-                <td class='table_players_data'>
-                    <input class='input-fields' type='text' value='".$row[5]."' />
-                </td>
-            </tr>
-            <tr class='table_players_row'>
-                <td class='table_players_data'>
-                    Race :
-                </td>
-                <td class='table_players_data'>
-                    <input class='input-fields' type='text' value='".$row[6]."' />
-                </td>
-            </tr>
-            <tr class='table_players_row'>
-                <td class='table_players_data'>
-                    Class :
-                </td>
-                <td class='table_players_data'>
-                    <input class='input-fields' type='text' value='".$row[7]."' />
-                </td>
-            </tr>
-            <tr class='table_players_row'>
-                <td class='table_players_data' colspan='2'>
-                    <input type ='submit' class='submit-inputs' value='Update' />
-                </td>
-            </tr>
+            <form action='updatecharacter.php' method='post'>
+                <input type='hidden' name='acct_id' value='".$acct_id."'/>
+                <input type='hidden' name='char_name' value='".$char_name."'/>
+                <tr class='table_players_row'>
+                    <td class='table_players_data'>
+                        Player ID :
+                    </td>
+                    <td class='table_players_data'>
+                        ".$row[0]."
+                    </td>
+                </tr>
+                <tr class='table_players_row'>
+                    <td class='table_players_data'>
+                        Character Name :
+                    </td>
+                    <td class='table_players_data'>
+                        ".$row[1]."
+                    </td>
+                </tr>
+                <tr class='table_players_row'>
+                    <td class='table_players_data'>
+                        Level :
+                    </td>
+                    <td class='table_players_data'>
+                        <input name='level' class='input-fields' type='text' value='".$row[2]."' />
+                    </td>
+                </tr>
+                <tr class='table_players_row'>
+                    <td class='table_players_data'>
+                        Experience :
+                    </td>
+                    <td class='table_players_data'>
+                        <input name='xp' class='input-fields' type='text' value='".$row[3]."' />
+                    </td>
+                </tr>
+                <tr class='table_players_row'>
+                    <td class='table_players_data'>
+                        Gold :
+                    </td>
+                    <td class='table_players_data'>
+                        <input name='gold' class='input-fields' type='text' value='".$row[4]."' />
+                    </td>
+                </tr>
+                <tr class='table_players_row'>
+                    <td class='table_players_data'>
+                        Location :
+                    </td>
+                    <td class='table_players_data'>
+                        <input name='location' class='input-fields' type='text' value='".$row[5]."' />
+                    </td>
+                </tr>
+                <tr class='table_players_row'>
+                    <td class='table_players_data'>
+                        Race :
+                    </td>
+                    <td class='table_players_data'>
+                        <input name='race' class='input-fields' type='text' value='".$row[6]."' />
+                    </td>
+                </tr>
+                <tr class='table_players_row'>
+                    <td class='table_players_data'>
+                        Class :
+                    </td>
+                    <td class='table_players_data'>
+                        <input name='class' class='input-fields' type='text' value='".$row[7]."' />
+                    </td>
+                </tr>
+                <tr class='table_players_row'>
+                    <td class='table_players_data' colspan='2'>
+                        <input type ='submit' class='submit-inputs' value='Update Character' />
+                    </td>
+                </tr>
+                <tr class='table_players_row'>
+                    <td class='table_players_data' colspan='2'>
+                        Note: Changing race or class can result in equipped items with requirements being unequipped when the player enters the game.
+                    </td>
+                </tr>
+            </form>
             ";
             ?>
             <br/>
