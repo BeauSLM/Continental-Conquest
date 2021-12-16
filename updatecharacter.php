@@ -51,7 +51,10 @@
             echo "
                 <div class='center'>
                     <div id='center-content'>
-                    Update failed: Cannot change to race that does not exist. Go back to main page. <a href='index.php'>Index</a>
+                        Update failed: Cannot change to race that does not exist.
+                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
             ";
@@ -60,7 +63,10 @@
             echo "
                 <div class='center'>
                     <div id='center-content'>
-                    Update failed: Cannot change to class that does not exist. Go back to main page. <a href='index.php'>Index</a>
+                        Update failed: Cannot change to class that does not exist.
+                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
             ";
@@ -69,7 +75,10 @@
             echo "
             <div class='center'>
                 <div id='center-content'>
-                    Update failed: Invalid level, gold, or xp value. Go back to main page. <a href='index.php'>Index</a>
+                    Update failed: Invalid level, gold, or xp value. Go back to main page.
+                    <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                    <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                    <br/><a href='index.php'>Return to Main Menu</a>
                 </div>
             </div>
         ";
@@ -83,7 +92,10 @@
                 echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Error: Update did not occur. <a href='index.php'>Index</a>
+                        Update Failed: Update did not occur.
+                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
                 ";
@@ -91,7 +103,10 @@
                 echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Character successfully updated. Go back to main page. <a href='index.php'>Index</a>
+                        Update Success: Character successfully updated.
+                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
                 ";
@@ -102,7 +117,9 @@
         echo "
             <div class='center'>
                 <div id='center-content'>
-                    You have not specified the proper fields, this shouldn't happen. Go back to main page. <a href='index.php'>Index</a>
+                    Update Failed: You have not specified the proper fields, this shouldn't happen. 
+                    <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                    <br/><a href='index.php'>Return to Main Menu</a>
                 </div>
             </div>
             ";

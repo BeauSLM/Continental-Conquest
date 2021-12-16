@@ -31,7 +31,10 @@
             echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Guild does not exist in database. Go back to main page. <a href='index.php'>Index</a>
+                        Update Failed: Guild does not exist in database.
+                        <br/>Edit guild: <a href='editguild.php?guild=".$guild."'>".$guild."</a>
+                        <br/><a href='selecteditguild.php'>Edit another guild</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
                 ";
@@ -41,7 +44,10 @@
                 echo "
                     <div class='center'>
                         <div id='center-content'>
-                            The selected leader does not exist or is not a part of the guild. Go back to main page. <a href='index.php'>Index</a>
+                            Update Failed: The selected leader does not exist or is not a part of the guild.
+                            <br/><a href='editguild.php?guild=".$guild."'>Edit guild: ".$guild."</a>
+                            <br/><a href='selecteditguild.php'>Edit another guild</a> 
+                            <br/><a href='index.php'>Return to Main Menu</a>
                         </div>
                     </div>
                     ";                
@@ -55,7 +61,10 @@
                         echo "
                         <div class='center'>
                             <div id='center-content'>
-                                Error: Update did not occur. <a href='index.php'>Index</a>
+                                Update Failed: Update did not occur. 
+                                <br/><a href='editguild.php?guild=".$guild."'>Edit guild: ".$guild."</a>
+                                <br/><a href='selecteditguild.php'>Edit another guild</a> 
+                                <br/><a href='index.php'>Return to Main Menu</a>
                             </div>
                         </div>
                         ";
@@ -63,7 +72,10 @@
                         echo "
                         <div class='center'>
                             <div id='center-content'>
-                                Guild successfully updated. Go back to main page. <a href='index.php'>Index</a>
+                                Update Success: Guild successfully updated.
+                                <br/><a href='editguild.php?guild=".$guild."'>Edit guild: ".$guild."</a>
+                                <br/><a href='selecteditguild.php'>Edit another guild</a> 
+                                <br/><a href='index.php'>Return to Main Menu</a>
                             </div>
                         </div>
                         ";
@@ -72,7 +84,10 @@
                     echo "
                     <div class='center'>
                         <div id='center-content'>
-                            XP, Gold or Level values are invalid. Go back to main page. <a href='index.php'>Index</a>
+                            Update Failed: XP, Gold or Level values are invalid. Go back to main page.
+                            <br/><a href='editguild.php?guild=".$guild."'>Edit guild: ".$guild."</a>
+                            <br/><a href='selecteditguild.php'>Edit another guild</a> 
+                            <br/><a href='index.php'>Return to Main Menu</a>
                         </div>
                     </div>
                     ";                    
@@ -84,7 +99,9 @@
         echo "
             <div class='center'>
                 <div id='center-content'>
-                    You have not specified the proper fields, this shouldn't happen. Go back to main page. <a href='index.php'>Index</a>
+                    Update Failed: You have not specified the proper fields, this shouldn't happen.
+                    <br/><a href='selecteditguild.php'>Edit another guild</a> 
+                    <br/><a href='index.php'>Return to Main Menu</a>
                 </div>
             </div>
             ";

@@ -23,7 +23,10 @@
                 echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Wasn't able to remove the item with the given criteria. Go back to main page. <a href='index.php'>Index</a>
+                        Delete Failed: Wasn't able to remove item from bag with the given criteria.
+                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
                 ";
@@ -31,7 +34,10 @@
                 echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Item with criteria : Account ID -> ".$acct_id."., Character Name-> ".$char_name.", Item ID -> ".$item_ID." was removed. Go back to main page. <a href='index.php'>Index</a>
+                        Delete Success: Item with criteria : Account ID -> ".$acct_id."., Character Name-> ".$char_name.", Item ID -> ".$item_ID." was removed from bag.
+                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div> ";
             }
@@ -43,7 +49,10 @@
                 echo "
                     <div class='center'>
                         <div id='center-content'>
-                            Was not able to remove the item with the given criteria. Go back to main page. <a href='index.php'>Index</a>
+                            Delete Failed: Was not able to remove the item from slots with the given criteria.
+                            <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                            <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                            <br/><a href='index.php'>Return to Main Menu</a>
                         </div>
                     </div>
                     ";
@@ -51,7 +60,10 @@
                 echo "
                     <div class='center'>
                         <div id='center-content'>
-                            Item with criteria : Account ID -> ".$acct_id."., Character Name-> ".$char_name.", Item ID -> ".$item_ID." was removed. Go back to main page. <a href='index.php'>Index</a>
+                            Delete Success: Item with criteria : Account ID -> ".$acct_id."., Character Name-> ".$char_name.", Item ID -> ".$item_ID." was removed.
+                            <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                            <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                            <br/><a href='index.php'>Return to Main Menu</a>
                         </div>
                     </div>
                     ";
@@ -60,17 +72,23 @@
             echo "
             <div class='center'>
                 <div id='center-content'>
-                    Operation unspecified, this shouldn't happen. Go back to main page. <a href='index.php'>Index</a>
+                    Error: Operation (bag or slot) unspecified, this shouldn't happen.
+                    <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                    <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                    <br/><a href='index.php'>Return to Main Menu</a>
                 </div>
             </div>
             ";
         }
     } else {
+
         //not correct fields
         echo "
             <div class='center'>
                 <div id='center-content'>
-                    You have not specified the proper fields, this shouldn't happen. Go back to main page. <a href='index.php'>Index</a>
+                    Error: You have not specified the proper fields or the user has no items.
+                    <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                    <br/><a href='index.php'>Return to Main Menu</a>
                 </div>
             </div>
             ";

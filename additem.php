@@ -23,7 +23,10 @@
             echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Item ID does not exist in database. Go back to main page. <a href='index.php'>Index</a>
+                        Insert Failed: Item ID does not exist in database.
+                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
                 ";
@@ -38,7 +41,10 @@
                 echo "
                 <div class='center'>
                     <div id='center-content'>
-                        User already has item in bag. Go back to main page. <a href='index.php'>Index</a>
+                        Insert Failed: User already has item in bag. Go back to main page. <a href='index.php'>Index</a>
+                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
                 ";
@@ -49,7 +55,10 @@
                 echo "
                 <div class='center'>
                     <div id='center-content'>
-                        Item with criteria : Account ID -> ".$acct_id."., Character Name-> ".$char_name.", Item ID -> ".$item_ID." was added to bag. Go back to main page. <a href='index.php'>Index</a>
+                        Insert Success: Item with criteria : Account ID -> ".$acct_id."., Character Name-> ".$char_name.", Item ID -> ".$item_ID." was added to bag.
+                        <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                        <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div> ";
             }
@@ -59,7 +68,10 @@
         echo "
             <div class='center'>
                 <div id='center-content'>
-                    You have not specified the proper fields, this shouldn't happen. Go back to main page. <a href='index.php'>Index</a>
+                    Error: You have not specified the proper fields, this shouldn't happen.
+                    <br/><a href='editcharacter.php?acct_id=".$acct_id."&char_name=".$char_name."'>Edit character: ".$char_name."</a>
+                    <br/><a href='selecteditcharacter.php'>Edit another character</a> 
+                    <br/><a href='index.php'>Return to Main Menu</a>
                 </div>
             </div>
             ";

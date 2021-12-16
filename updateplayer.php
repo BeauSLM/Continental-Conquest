@@ -33,7 +33,10 @@
             echo "
                 <div class='center'>
                     <div id='center-content'>
-                        User does not exist in database or is not a player. This shouldn't happen. Go back to main page. <a href='index.php'>Index</a>
+                        Update Failed: User does not exist in database or is not a player. This shouldn't happen.
+                        <br/><a href='editplayer.php?acct_id=".$acct_id."'>Edit player: ".$username."</a>
+                        <br/><a href='selecteditplayer.php'>Edit another player</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
                 ";
@@ -53,7 +56,10 @@
                         echo "
                         <div class='center'>
                             <div id='center-content'>
-                                Cannot remove guild association as the selected user is the leader of a guild. Go back to main page. <a href='index.php'>Index</a>
+                                Update Failed: Cannot remove guild association as the selected user is the leader of a guild.
+                                <br/><a href='editplayer.php?acct_id=".$acct_id."'>Edit player: ".$username."</a>
+                                <br/><a href='selecteditplayer.php'>Edit another player</a> 
+                                <br/><a href='index.php'>Return to Main Menu</a>
                             </div>
                         </div>
                         ";  
@@ -71,7 +77,10 @@
                         echo "
                         <div class='center'>
                             <div id='center-content'>
-                                Player successfully updated. Go to main page. <a href='index.php'>Index</a>
+                                Update Success: Player successfully updated.
+                                <br/><a href='editplayer.php?acct_id=".$acct_id."'>Edit player: ".$username."</a>
+                                <br/><a href='selecteditplayer.php'>Edit another player</a> 
+                                <br/><a href='index.php'>Return to Main Menu</a>
                             </div>
                         </div>
                         ";
@@ -90,7 +99,10 @@
                             echo "
                             <div class='center'>
                                 <div id='center-content'>
-                                    Cannot change player's guild as the selected user is the leader of a guild. Go back to main page. <a href='index.php'>Index</a>
+                                    Update Failed: Cannot change player's guild as the selected user is the leader of a guild.
+                                    <br/><a href='editplayer.php?acct_id=".$acct_id."'>Edit player: ".$username."</a>
+                                    <br/><a href='selecteditplayer.php'>Edit another player</a> 
+                                    <br/><a href='index.php'>Return to Main Menu</a>
                                 </div>
                             </div>
                             ";  
@@ -108,7 +120,10 @@
                             echo "
                             <div class='center'>
                                 <div id='center-content'>
-                                    Player successfully updated. Go to main page. <a href='index.php'>Index</a>
+                                    Update Success: Player successfully updated.
+                                    <br/><a href='editplayer.php?acct_id=".$acct_id."'>Edit player: ".$username."</a>
+                                    <br/><a href='selecteditplayer.php'>Edit another player</a> 
+                                    <br/><a href='index.php'>Return to Main Menu</a>
                                 </div>
                             </div>
                             ";
@@ -119,7 +134,10 @@
                         echo "
                             <div class='center'>
                                 <div id='center-content'>
-                                    Cannot update to guild that does not exist. Go to main page. <a href='index.php'>Index</a>
+                                    Update Failed: Cannot update to guild that does not exist in database.
+                                    <br/><a href='editplayer.php?acct_id=".$acct_id."'>Edit player: ".$username."</a>
+                                    <br/><a href='selecteditplayer.php'>Edit another player</a> 
+                                    <br/><a href='index.php'>Return to Main Menu</a>
                                 </div>
                             </div>
                             ";
@@ -139,7 +157,10 @@
                 echo "
                 <div class='center'>
                     <div id='center-content'>
-                        [4] Player successfully updated. (No guild switch) Go to main page. <a href='index.php'>Index</a>
+                        Update Success: Player successfully updated.
+                        <br/><a href='editplayer.php?acct_id=".$acct_id."'>Edit player: ".$username."</a>
+                        <br/><a href='selecteditplayer.php'>Edit another player</a> 
+                        <br/><a href='index.php'>Return to Main Menu</a>
                     </div>
                 </div>
                 ";
@@ -151,7 +172,9 @@
         echo "
             <div class='center'>
                 <div id='center-content'>
-                    You have not specified the proper fields, this shouldn't happen. Go back to main page. <a href='index.php'>Index</a>
+                    Update Failed: You have not specified the proper fields, this shouldn't happen.
+                    <br/><a href='selecteditplayer.php'>Edit another player</a> 
+                    <br/><a href='index.php'>Return to Main Menu</a>
                 </div>
             </div>
             ";
