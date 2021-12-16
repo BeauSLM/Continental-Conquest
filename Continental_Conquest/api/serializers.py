@@ -21,6 +21,7 @@ class AdminSerializer(serializers.ModelSerializer):
             'admin',
             'perm_level'
         )
+
 class CharbagSerializer(serializers.ModelSerializer):
     class Meta:
         model = CharBag
@@ -52,21 +53,6 @@ class CharstatsSerializer(serializers.ModelSerializer):
             'mp',
             'spd'
         )
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Users
-        fields = (
-            'acct_id',
-            'fname',
-            'lname',
-            'username',
-            'password',
-            'birthday',
-            'email'
-        )
-
-
 
 class CharactersSerializer(serializers.ModelSerializer):
     class Meta:
@@ -125,7 +111,7 @@ class ItemSerializer(serializers.ModelSerializer):
             'item_id',
             'name',
             'type',
-            'sel_price',
+            'sell_price',
             'rarity',
             'description',
             'item_category',
@@ -141,7 +127,7 @@ class ItemclassreqSerializer(serializers.ModelSerializer):
             'class_field'
         )
 
-class ItemstatsSerializer(serializers.ModelSerializer):
+class ItemstatSerializer(serializers.ModelSerializer):
     class Meta:
         model = ItemStats
         fields = (
@@ -161,6 +147,7 @@ class PartySerializer(serializers.ModelSerializer):
             'acct',
             'ch_name'
         )
+
 class PlayersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Players
@@ -199,3 +186,17 @@ class TicketSerializer(serializers.ModelSerializer):
             'admin',
             'status'
         )
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Users
+        fields = (
+            'acct_id',
+            'fname',
+            'lname',
+            'username',
+            'password',
+            'birthday',
+            'email'
+        )
+
