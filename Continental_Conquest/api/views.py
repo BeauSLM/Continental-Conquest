@@ -39,3 +39,23 @@ class RaceabilityViewSet(viewsets.ModelViewSet):
     queryset = RaceAbility.objects.all()
     serializer_class = RaceabilitySerializer
 
+class AbilityViewSet(viewsets.ModelViewSet):
+    queryset = Ability.objects.all()
+    serializer_class = AbilitySerializer
+
+class PartyViewSet(viewsets.ModelViewSet):
+    queryset = Part.objects.all()
+    serializer_class = PartySerializer
+
+class ItemclassreqViewSet(viewsets.ModelViewSet):
+    queryset = ItemClassReq.objects.all()
+    serializer_class = ItemclassreqSerializer
+
+class RaceViewSet(viewsets.ModelViewSet):
+    queryset = Race.objects.all()
+    serializer_class = RaceSerializer
+
+class ClassViewSet(viewsets.ModelViewSet):
+    queryset = Class.objects.all()
+    serializer_class = ClassSerializer
+
