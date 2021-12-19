@@ -1,0 +1,2217 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /players/:
+    get:
+      operationId: listPlayers
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Players'
+          description: ''
+      tags:
+      - players
+    post:
+      operationId: createPlayers
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Players'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Players'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Players'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Players'
+          description: ''
+      tags:
+      - players
+  /players/{player}/:
+    get:
+      operationId: retrievePlayers
+      description: ''
+      parameters:
+      - name: player
+        in: path
+        required: true
+        description: A unique value identifying this players.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Players'
+          description: ''
+      tags:
+      - players
+    put:
+      operationId: updatePlayers
+      description: ''
+      parameters:
+      - name: player
+        in: path
+        required: true
+        description: A unique value identifying this players.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Players'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Players'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Players'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Players'
+          description: ''
+      tags:
+      - players
+    patch:
+      operationId: partialUpdatePlayers
+      description: ''
+      parameters:
+      - name: player
+        in: path
+        required: true
+        description: A unique value identifying this players.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Players'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Players'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Players'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Players'
+          description: ''
+      tags:
+      - players
+    delete:
+      operationId: destroyPlayers
+      description: ''
+      parameters:
+      - name: player
+        in: path
+        required: true
+        description: A unique value identifying this players.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - players
+  /characters/:
+    get:
+      operationId: listCharacters
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Characters'
+          description: ''
+      tags:
+      - characters
+    post:
+      operationId: createCharacters
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Characters'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Characters'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Characters'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Characters'
+          description: ''
+      tags:
+      - characters
+  /characters/{acct}/:
+    get:
+      operationId: retrieveCharacters
+      description: ''
+      parameters:
+      - name: acct
+        in: path
+        required: true
+        description: A unique value identifying this characters.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Characters'
+          description: ''
+      tags:
+      - characters
+    put:
+      operationId: updateCharacters
+      description: ''
+      parameters:
+      - name: acct
+        in: path
+        required: true
+        description: A unique value identifying this characters.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Characters'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Characters'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Characters'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Characters'
+          description: ''
+      tags:
+      - characters
+    patch:
+      operationId: partialUpdateCharacters
+      description: ''
+      parameters:
+      - name: acct
+        in: path
+        required: true
+        description: A unique value identifying this characters.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Characters'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Characters'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Characters'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Characters'
+          description: ''
+      tags:
+      - characters
+    delete:
+      operationId: destroyCharacters
+      description: ''
+      parameters:
+      - name: acct
+        in: path
+        required: true
+        description: A unique value identifying this characters.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - characters
+  /guild/:
+    get:
+      operationId: listGuilds
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Guild'
+          description: ''
+      tags:
+      - guild
+    post:
+      operationId: createGuild
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Guild'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Guild'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Guild'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guild'
+          description: ''
+      tags:
+      - guild
+  /guild/{guild_name}/:
+    get:
+      operationId: retrieveGuild
+      description: ''
+      parameters:
+      - name: guild_name
+        in: path
+        required: true
+        description: A unique value identifying this guild.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guild'
+          description: ''
+      tags:
+      - guild
+    put:
+      operationId: updateGuild
+      description: ''
+      parameters:
+      - name: guild_name
+        in: path
+        required: true
+        description: A unique value identifying this guild.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Guild'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Guild'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Guild'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guild'
+          description: ''
+      tags:
+      - guild
+    patch:
+      operationId: partialUpdateGuild
+      description: ''
+      parameters:
+      - name: guild_name
+        in: path
+        required: true
+        description: A unique value identifying this guild.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Guild'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Guild'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Guild'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Guild'
+          description: ''
+      tags:
+      - guild
+    delete:
+      operationId: destroyGuild
+      description: ''
+      parameters:
+      - name: guild_name
+        in: path
+        required: true
+        description: A unique value identifying this guild.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - guild
+  /ticket/:
+    get:
+      operationId: listTickets
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ticket'
+          description: ''
+      tags:
+      - ticket
+    post:
+      operationId: createTicket
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+          description: ''
+      tags:
+      - ticket
+  /ticket/{ticket_id}/:
+    get:
+      operationId: retrieveTicket
+      description: ''
+      parameters:
+      - name: ticket_id
+        in: path
+        required: true
+        description: A unique integer value identifying this ticket.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+          description: ''
+      tags:
+      - ticket
+    put:
+      operationId: updateTicket
+      description: ''
+      parameters:
+      - name: ticket_id
+        in: path
+        required: true
+        description: A unique integer value identifying this ticket.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+          description: ''
+      tags:
+      - ticket
+    patch:
+      operationId: partialUpdateTicket
+      description: ''
+      parameters:
+      - name: ticket_id
+        in: path
+        required: true
+        description: A unique integer value identifying this ticket.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+          description: ''
+      tags:
+      - ticket
+    delete:
+      operationId: destroyTicket
+      description: ''
+      parameters:
+      - name: ticket_id
+        in: path
+        required: true
+        description: A unique integer value identifying this ticket.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - ticket
+  /classability/:
+    get:
+      operationId: listClassAbilitys
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Classability'
+          description: ''
+      tags:
+      - classability
+    post:
+      operationId: createClassAbility
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Classability'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Classability'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Classability'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Classability'
+          description: ''
+      tags:
+      - classability
+  /classability/{abil_name}/:
+    get:
+      operationId: retrieveClassAbility
+      description: ''
+      parameters:
+      - name: abil_name
+        in: path
+        required: true
+        description: A unique value identifying this class ability.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Classability'
+          description: ''
+      tags:
+      - classability
+    put:
+      operationId: updateClassAbility
+      description: ''
+      parameters:
+      - name: abil_name
+        in: path
+        required: true
+        description: A unique value identifying this class ability.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Classability'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Classability'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Classability'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Classability'
+          description: ''
+      tags:
+      - classability
+    patch:
+      operationId: partialUpdateClassAbility
+      description: ''
+      parameters:
+      - name: abil_name
+        in: path
+        required: true
+        description: A unique value identifying this class ability.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Classability'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Classability'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Classability'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Classability'
+          description: ''
+      tags:
+      - classability
+    delete:
+      operationId: destroyClassAbility
+      description: ''
+      parameters:
+      - name: abil_name
+        in: path
+        required: true
+        description: A unique value identifying this class ability.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - classability
+  /item/:
+    get:
+      operationId: listItems
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+          description: ''
+      tags:
+      - item
+    post:
+      operationId: createItem
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Item'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+          description: ''
+      tags:
+      - item
+  /item/{item_id}/:
+    get:
+      operationId: retrieveItem
+      description: ''
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        description: A unique integer value identifying this item.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+          description: ''
+      tags:
+      - item
+    put:
+      operationId: updateItem
+      description: ''
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        description: A unique integer value identifying this item.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Item'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+          description: ''
+      tags:
+      - item
+    patch:
+      operationId: partialUpdateItem
+      description: ''
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        description: A unique integer value identifying this item.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Item'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Item'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+          description: ''
+      tags:
+      - item
+    delete:
+      operationId: destroyItem
+      description: ''
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        description: A unique integer value identifying this item.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - item
+  /itemstats/:
+    get:
+      operationId: listItemStats
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Itemstat'
+          description: ''
+      tags:
+      - itemstats
+    post:
+      operationId: createItemStats
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Itemstat'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Itemstat'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Itemstat'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Itemstat'
+          description: ''
+      tags:
+      - itemstats
+  /itemstats/{item}/:
+    get:
+      operationId: retrieveItemStats
+      description: ''
+      parameters:
+      - name: item
+        in: path
+        required: true
+        description: A unique value identifying this item stats.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Itemstat'
+          description: ''
+      tags:
+      - itemstats
+    put:
+      operationId: updateItemStats
+      description: ''
+      parameters:
+      - name: item
+        in: path
+        required: true
+        description: A unique value identifying this item stats.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Itemstat'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Itemstat'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Itemstat'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Itemstat'
+          description: ''
+      tags:
+      - itemstats
+    patch:
+      operationId: partialUpdateItemStats
+      description: ''
+      parameters:
+      - name: item
+        in: path
+        required: true
+        description: A unique value identifying this item stats.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Itemstat'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Itemstat'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Itemstat'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Itemstat'
+          description: ''
+      tags:
+      - itemstats
+    delete:
+      operationId: destroyItemStats
+      description: ''
+      parameters:
+      - name: item
+        in: path
+        required: true
+        description: A unique value identifying this item stats.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - itemstats
+  /charstats/:
+    get:
+      operationId: listCharStats
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Charstats'
+          description: ''
+      tags:
+      - charstats
+    post:
+      operationId: createCharStats
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Charstats'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Charstats'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Charstats'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Charstats'
+          description: ''
+      tags:
+      - charstats
+  /charstats/{acc}/:
+    get:
+      operationId: retrieveCharStats
+      description: ''
+      parameters:
+      - name: acc
+        in: path
+        required: true
+        description: A unique value identifying this char stats.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Charstats'
+          description: ''
+      tags:
+      - charstats
+    put:
+      operationId: updateCharStats
+      description: ''
+      parameters:
+      - name: acc
+        in: path
+        required: true
+        description: A unique value identifying this char stats.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Charstats'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Charstats'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Charstats'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Charstats'
+          description: ''
+      tags:
+      - charstats
+    patch:
+      operationId: partialUpdateCharStats
+      description: ''
+      parameters:
+      - name: acc
+        in: path
+        required: true
+        description: A unique value identifying this char stats.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Charstats'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Charstats'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Charstats'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Charstats'
+          description: ''
+      tags:
+      - charstats
+    delete:
+      operationId: destroyCharStats
+      description: ''
+      parameters:
+      - name: acc
+        in: path
+        required: true
+        description: A unique value identifying this char stats.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - charstats
+  /raceability/:
+    get:
+      operationId: listRaceAbilitys
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Raceability'
+          description: ''
+      tags:
+      - raceability
+    post:
+      operationId: createRaceAbility
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Raceability'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Raceability'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Raceability'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Raceability'
+          description: ''
+      tags:
+      - raceability
+  /raceability/{abil_name}/:
+    get:
+      operationId: retrieveRaceAbility
+      description: ''
+      parameters:
+      - name: abil_name
+        in: path
+        required: true
+        description: A unique value identifying this race ability.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Raceability'
+          description: ''
+      tags:
+      - raceability
+    put:
+      operationId: updateRaceAbility
+      description: ''
+      parameters:
+      - name: abil_name
+        in: path
+        required: true
+        description: A unique value identifying this race ability.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Raceability'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Raceability'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Raceability'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Raceability'
+          description: ''
+      tags:
+      - raceability
+    patch:
+      operationId: partialUpdateRaceAbility
+      description: ''
+      parameters:
+      - name: abil_name
+        in: path
+        required: true
+        description: A unique value identifying this race ability.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Raceability'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Raceability'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Raceability'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Raceability'
+          description: ''
+      tags:
+      - raceability
+    delete:
+      operationId: destroyRaceAbility
+      description: ''
+      parameters:
+      - name: abil_name
+        in: path
+        required: true
+        description: A unique value identifying this race ability.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - raceability
+  /ability/:
+    get:
+      operationId: listAbilitys
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ability'
+          description: ''
+      tags:
+      - ability
+    post:
+      operationId: createAbility
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ability'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Ability'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Ability'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ability'
+          description: ''
+      tags:
+      - ability
+  /ability/{name}/:
+    get:
+      operationId: retrieveAbility
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this ability.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ability'
+          description: ''
+      tags:
+      - ability
+    put:
+      operationId: updateAbility
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this ability.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ability'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Ability'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Ability'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ability'
+          description: ''
+      tags:
+      - ability
+    patch:
+      operationId: partialUpdateAbility
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this ability.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ability'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Ability'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Ability'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ability'
+          description: ''
+      tags:
+      - ability
+    delete:
+      operationId: destroyAbility
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this ability.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - ability
+  /party/:
+    get:
+      operationId: listPartys
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Party'
+          description: ''
+      tags:
+      - party
+    post:
+      operationId: createParty
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Party'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Party'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Party'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Party'
+          description: ''
+      tags:
+      - party
+  /party/{party_id}/:
+    get:
+      operationId: retrieveParty
+      description: ''
+      parameters:
+      - name: party_id
+        in: path
+        required: true
+        description: A unique value identifying this party.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Party'
+          description: ''
+      tags:
+      - party
+    put:
+      operationId: updateParty
+      description: ''
+      parameters:
+      - name: party_id
+        in: path
+        required: true
+        description: A unique value identifying this party.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Party'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Party'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Party'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Party'
+          description: ''
+      tags:
+      - party
+    patch:
+      operationId: partialUpdateParty
+      description: ''
+      parameters:
+      - name: party_id
+        in: path
+        required: true
+        description: A unique value identifying this party.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Party'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Party'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Party'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Party'
+          description: ''
+      tags:
+      - party
+    delete:
+      operationId: destroyParty
+      description: ''
+      parameters:
+      - name: party_id
+        in: path
+        required: true
+        description: A unique value identifying this party.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - party
+  /itemclassreq/:
+    get:
+      operationId: listItemClassReqs
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Itemclassreq'
+          description: ''
+      tags:
+      - itemclassreq
+    post:
+      operationId: createItemClassReq
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Itemclassreq'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Itemclassreq'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Itemclassreq'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Itemclassreq'
+          description: ''
+      tags:
+      - itemclassreq
+  /itemclassreq/{item}/:
+    get:
+      operationId: retrieveItemClassReq
+      description: ''
+      parameters:
+      - name: item
+        in: path
+        required: true
+        description: A unique value identifying this item class req.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Itemclassreq'
+          description: ''
+      tags:
+      - itemclassreq
+    put:
+      operationId: updateItemClassReq
+      description: ''
+      parameters:
+      - name: item
+        in: path
+        required: true
+        description: A unique value identifying this item class req.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Itemclassreq'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Itemclassreq'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Itemclassreq'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Itemclassreq'
+          description: ''
+      tags:
+      - itemclassreq
+    patch:
+      operationId: partialUpdateItemClassReq
+      description: ''
+      parameters:
+      - name: item
+        in: path
+        required: true
+        description: A unique value identifying this item class req.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Itemclassreq'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Itemclassreq'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Itemclassreq'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Itemclassreq'
+          description: ''
+      tags:
+      - itemclassreq
+    delete:
+      operationId: destroyItemClassReq
+      description: ''
+      parameters:
+      - name: item
+        in: path
+        required: true
+        description: A unique value identifying this item class req.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - itemclassreq
+  /race/:
+    get:
+      operationId: listRaces
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Race'
+          description: ''
+      tags:
+      - race
+    post:
+      operationId: createRace
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Race'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Race'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Race'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Race'
+          description: ''
+      tags:
+      - race
+  /race/{name}/:
+    get:
+      operationId: retrieveRace
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this race.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Race'
+          description: ''
+      tags:
+      - race
+    put:
+      operationId: updateRace
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this race.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Race'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Race'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Race'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Race'
+          description: ''
+      tags:
+      - race
+    patch:
+      operationId: partialUpdateRace
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this race.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Race'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Race'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Race'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Race'
+          description: ''
+      tags:
+      - race
+    delete:
+      operationId: destroyRace
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this race.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - race
+  /class/:
+    get:
+      operationId: listClass
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Class'
+          description: ''
+      tags:
+      - class
+    post:
+      operationId: createClass
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Class'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Class'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Class'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Class'
+          description: ''
+      tags:
+      - class
+  /class/{name}/:
+    get:
+      operationId: retrieveClass
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this class.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Class'
+          description: ''
+      tags:
+      - class
+    put:
+      operationId: updateClass
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this class.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Class'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Class'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Class'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Class'
+          description: ''
+      tags:
+      - class
+    patch:
+      operationId: partialUpdateClass
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this class.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Class'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Class'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Class'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Class'
+          description: ''
+      tags:
+      - class
+    delete:
+      operationId: destroyClass
+      description: ''
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: A unique value identifying this class.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - class
+components:
+  schemas:
+    Players:
+      type: object
+      properties:
+        player:
+          type: integer
+        playtime:
+          type: string
+          maxLength: 30
+        sub_status:
+          type: string
+          maxLength: 20
+        guild:
+          type: string
+          nullable: true
+      required:
+      - player
+      - playtime
+      - sub_status
+    Characters:
+      type: object
+      properties:
+        acct:
+          type: string
+        name:
+          type: string
+          maxLength: 20
+        lvl:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        xp:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        gold:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        location:
+          type: string
+          maxLength: 30
+        race:
+          type: string
+        class_field:
+          type: string
+        party:
+          type: string
+          nullable: true
+      required:
+      - acct
+      - name
+      - lvl
+      - xp
+      - gold
+      - location
+      - race
+      - class_field
+    Guild:
+      type: object
+      properties:
+        guild_name:
+          type: string
+          maxLength: 30
+        leader:
+          type: string
+        xp:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        level:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        gold:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - guild_name
+      - leader
+      - xp
+      - level
+      - gold
+    Ticket:
+      type: object
+      properties:
+        ticket_id:
+          type: integer
+          readOnly: true
+        issue:
+          type: string
+          maxLength: 500
+        category:
+          type: string
+          maxLength: 30
+        date:
+          type: string
+          format: date
+        player:
+          type: string
+        admin:
+          type: string
+          nullable: true
+        status:
+          type: string
+          maxLength: 15
+      required:
+      - issue
+      - category
+      - date
+      - player
+      - status
+    Classability:
+      type: object
+      properties:
+        abil_name:
+          type: string
+        class_field:
+          type: string
+      required:
+      - abil_name
+      - class_field
+    Item:
+      type: object
+      properties:
+        item_id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 50
+        type:
+          type: string
+          maxLength: 30
+        sell_price:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        rarity:
+          type: string
+          maxLength: 30
+        description:
+          type: string
+          nullable: true
+          maxLength: 100
+        item_category:
+          type: string
+          maxLength: 30
+        base_dmg:
+          type: string
+          nullable: true
+          maxLength: 30
+        base_def:
+          type: string
+          nullable: true
+          maxLength: 30
+      required:
+      - name
+      - type
+      - sell_price
+      - rarity
+      - item_category
+    Itemstat:
+      type: object
+      properties:
+        item:
+          type: integer
+        atk:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        def_field:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        hp:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        mp:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        spd:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+      required:
+      - item
+    Charstats:
+      type: object
+      properties:
+        acc:
+          type: string
+        char_name:
+          type: string
+        atk:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        def_field:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        hp:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        mp:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        spd:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - acc
+      - char_name
+      - atk
+      - def_field
+      - hp
+      - mp
+      - spd
+    Raceability:
+      type: object
+      properties:
+        abil_name:
+          type: string
+        race:
+          type: string
+      required:
+      - abil_name
+      - race
+    Ability:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 30
+        mana_cost:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        description:
+          type: string
+          maxLength: 300
+        damage:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          nullable: true
+        lv_req:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        cooldown:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - name
+      - mana_cost
+      - description
+      - lv_req
+      - cooldown
+    Party:
+      type: object
+      properties:
+        party_id:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        acct:
+          type: string
+        ch_name:
+          type: string
+      required:
+      - party_id
+      - acct
+      - ch_name
+    Itemclassreq:
+      type: object
+      properties:
+        item:
+          type: integer
+        class_field:
+          type: string
+      required:
+      - item
+      - class_field
+    Race:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 30
+        description:
+          type: string
+          maxLength: 300
+      required:
+      - name
+      - description
+    Class:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 30
+        description:
+          type: string
+          maxLength: 300
+      required:
+      - name
+      - description
