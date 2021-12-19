@@ -8,8 +8,7 @@
         $char_name = $_POST["char_name"];
     } else {
         $acct_id = $_GET["acct_id"];
-        $char_name = $_GET["char_name"];
-    }
+        $char_name = $_GET["char_name"];    }
 
     //finds the character
     $stmt = $db->connection->prepare('SELECT * FROM CHARACTERS WHERE Acct_ID = ? AND Name = ?');
@@ -38,22 +37,22 @@
                                     Character Name
                                 </td>
                                 <td class="table_players_header_data">
+                                    Level
+                                </td>
+                                <td class="table_players_header_data">
+                                    Experience
+                                </td>  
+                                <td class="table_players_header_data">
+                                    Gold
+                                </td>
+                                <td class="table_players_header_data">
+                                    Location
+                                </td>
+                                <td class="table_players_header_data">
                                     Race
                                 </td>
                                 <td class="table_players_header_data">
                                     Class
-                                </td>  
-                                <td class="table_players_header_data">
-                                    Owned by
-                                </td>
-                                <td class="table_players_header_data">
-                                    Experience
-                                </td>
-                                <td class="table_players_header_data">
-                                    Level
-                                </td>
-                                <td class="table_players_header_data">
-                                    Gold
                                 </td>
                                 <td class="table_players_header_data">
                                     Party Members List
@@ -111,7 +110,8 @@
                                                 echo "<option value=".$pmember['Ch_name'].">".$pmember['Ch_name']."</option>";
                                             }
                                     ?>
-                                    </select>
+                                    </se
+                                    lect>
                                     <?php
                                         } else { //if char isn't in party, tells them that
                                             echo "No Party.";
@@ -162,7 +162,8 @@
                                                         ".$stats[3]."
                                                     </td>
                                                     <td class='table_players_data'>
-                                                        ".$stats[4]."
+                                    
+                                                    ".$stats[4]."
                                                     </td>
                                                     <td class='table_players_data'>
                                                         ".$stats[5]."
